@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Foldit:wght@700&family=Josefin+Sans:wght@300;400;500;600;700&family=Nabla&family=Poppins:wght@300;400;500;600;700;800;900&family=Rubik+Glitch&family=Sarala:wght@400;700&display=swap');*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+
+}
+
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+img{
+    width: 400px;
+    animation: float 6s ease-in-out infinite;
+    margin-bottom: 50px;
+    margin-top: 30px;
+}
+
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0)
+    }
+    50% {
+        transform: translateY(-50px);
+    }
+}
+
+
+h1{
+    font-family: 'Sarala';
+    font-size: 50px;
+    line-height: 20px;
+}
+
+h2{
+    font-family: 'Foldit';
+    font-size: 60px;
+}
+
+h3{
+    font-family: 'Sarala';
+    font-size: 20px;
+}
+
+a{
+    text-decoration: none;
+    font-family: 'Poppins';
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: blue;
+}
+a:hover{
+    text-decoration: underline;
+    color: blueviolet;
+}

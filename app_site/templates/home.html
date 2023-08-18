@@ -1,0 +1,452 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'app_site/css/home.css' %}">
+    <script src="https://kit.fontawesome.com/dc37c7fe1c.js" crossorigin="anonymous"></script>
+    <title>Home STUDIO RAMOSS</title>
+</head>
+<body>
+    {% include "navbar.html" %}
+    <a href="https://wa.me/+55+ddd+numero" target="_blank" id="contato_wats"><i class="fa-brands fa-whatsapp"></i></a>
+    
+    
+
+    <main onmouseover="menos()">
+        <section class="container_principal inicio">
+            <!-- <video autoplay muted loop>
+                <source src="{% static 'agendamento/videos/video.webm' %}"> 
+            </video> -->
+            <div class="container_marca">
+                <!-- <p>STUDIO</p>
+                <h1>RAMOSS</h1>
+                <p>Maquiar é Transformar</p> -->
+                <img src="{% static 'app_site/img/logos/logo2.png'%}" alt="">
+                
+                <a href="" id="btn_agendar">Agendar</a>
+                
+                
+            </div>
+           
+        </section>
+
+        <section class="principal" >
+            
+            <h1>Veja o que oferecemos</h1>
+            <div class="carousel_container">
+                <div class="carousel" id="carousel">
+                    <div class="slider" data-bg="cb021c">
+                        <img src="{% static 'app_site/img/img_makes/maquiagem_natural.png'%}" alt="t">
+                        <h1>Maquiagem natural</h1>
+                        <a href="{% url 'sobremakes' 1 %}" class="link_make">Saiba Mais</a>
+                    </div>
+                    
+                    <div class="slider" data-bg="3F4346">
+                        <img src="{% static 'app_site/img/img_makes/maquiagem_colorida.png'%}" alt="s">
+                        <h1>Maquiagem Colorida</h1>
+                        <a href="{% url 'sobremakes' 2 %}" class="link_make">Saiba Mais</a>
+                    </div>
+                    <div class="slider" data-bg="3F4245">
+                        <img src="{% static 'app_site/img/img_makes/maquiagem_festa1.png'%}" alt="s">
+                        <h1>Maquiagem para Festas</h1>
+                        <a href="{% url 'sobremakes' 3 %}" class="link_make">Saiba Mais</a>
+                    </div>
+                    <div class="slider" data-bg="3F4275">
+                        <img src="{% static 'app_site/img/img_makes/make2.png'%}" alt="s">
+                        <h1>Maquiagem Glan</h1>
+                        <a href="{% url 'sobremakes' 4 %}" class="link_make">Saiba Mais</a>
+                    </div>
+                    
+                    <div class="slider" data-bg="3F4255">
+                        <img src="{% static 'app_site/img/img_makes/maquiagem_shimmer.png'%}" alt="s">
+                        <h1>Maquiagem Artistica</h1>
+                        <a href="{% url 'sobremakes' 5 %}" class="link_make">Saiba Mais</a>
+                    </div>
+                    <div class="slider" data-bg="3F4255">
+                        <img src="{% static 'app_site/img/img_makes/maquiagem_casamento1.png'%}" alt="s">
+                        <h1>Maquiagens para Casamento</h1>
+                        <a href="{% url 'sobremakes' 6 %}" class="link_make">Saiba Mais</a>
+                    </div>
+                    <div class="slider" data-bg="3F4255">
+                        <img src="{% static 'app_site/img/img_makes/maquiagem_sociais.png'%}" alt="s">
+                        <h1>Maquiagem para Eventos Sociais</h1>
+                        <a href="{% url 'sobremakes' 7 %}" class="link_make">Saiba Mais</a>
+                    </div>
+                    
+                </div>
+                <button class="seta_esquerda seta" id="left">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="seta_direita seta" id="direita">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </section>
+
+        <section class="container_maquiagens_atendimento" >
+            <h1>Cinfira as novidades!</h1>
+            <div class="conatiner_atendimento">
+                    
+                    <div class="atendimento">
+                        <div class="titulo_atendimento">
+                            <h2>Casamento</h2>
+                            <h3>Em domicilio ou Studio</h3>
+                        </div>
+                        <div class="lista_atendimento">
+                            <div class=" list1">
+                                <i class="fa-solid fa-check"></i>
+                                <p>Maquiagem Especial</p>
+                            </div>
+                            <div class="lists">
+                                <i class="fa-solid fa-check"></i>
+                                <p>Atendimento com equipe de assistentes</p>
+                            </div>
+                            <div class="lists">
+                                <i class="fa-solid fa-check"></i>
+                                <p>Makes e unhas</p>
+                            </div>
+                            <div class="lists">
+                                <i class="fa-solid fa-check"></i>
+                                <p>Cabelo e penteado</p>
+                            </div>
+                            <div class="lists">
+                                <i class="fa-solid fa-check"></i>
+                                <p>Atendimento em Domicilio e studio </p>
+                            </div>
+                            <a href="/sobremakes/{{6}}" class="link_btn">SAIBA MAIS</a>
+                        </div>
+                        
+
+                    </div>
+                    <div class="atendimento">
+                        <div class="titulo_atendimento">
+                            <h2>Maquiagem Colorida</h2>
+                            <h3>Em domicilio ou Studio</h3>
+                        </div>
+                        <div class="lista_atendimento">
+                            <div class=" list1">
+                                <i class="fa-solid fa-check"></i>
+                                <p>Maquiagem Especial</p>
+                            </div>
+                            <div class="lists">
+                                <i class="fa-solid fa-check"></i>
+                                <p>Atendimento personalizado</p>
+                            </div>
+                            <div class="lists">
+                                <i class="fa-solid fa-check"></i>
+                                <p>Produtos diferenciados</p>
+                            </div>
+                            <div class="lists">
+                                <i class="fa-solid fa-check"></i>
+                                <p>Atendimento especial</p>
+                            </div>
+                            <div class="lists">
+                                <i class="fa-solid fa-check"></i>
+                                <p>Atendimento em Domicilio e studio</p>
+                            </div>
+                            
+                            <a href="/sobremakes/{{2}}" class="link_btn">SAIBA MAIS</a>
+                        </div>
+                        
+
+
+                    </div>
+                    <div class="atendimento">
+                        <div class="titulo_atendimento">
+                            <h2>Maquiagem Artistica</h2>
+                            <h3>Em domicilio ou Studio</h3>
+                        </div>
+                        <div class="lista_atendimento">
+                            <div class=" list1">
+                                <i class="fa-solid fa-check"></i>
+                                <p>Maquiagem Especial</p>
+                            </div>
+                            <div class="lists">
+                                <i class="fa-solid fa-check"></i>
+                                <p>Atendimento personalizado</p>
+                            </div>
+                            <div class="lists">
+                                <i class="fa-solid fa-check"></i>
+                                <p>Produtos diferenciados</p>
+                            </div>
+                            <div class="lists">
+                                <i class="fa-solid fa-check"></i>
+                                <p>Estilo ao seu gosto</p>
+                            </div>
+                            <div class="lists">
+                                <i class="fa-solid fa-check"></i>
+                                <p>Makes de fantasias, anime e muito mais!</p>
+                            </div>
+                            
+                            <a href="/sobremakes/{{5}}" class="link_btn">SAIBA MAIS</a>
+                        </div>
+                        
+
+                    </div>
+                    <div class="atendimento">
+                        <div class="titulo_atendimento">
+                            <h2>Curso Auto Maquiagem</h2>
+                            <h3>Quer aprender a se MAQUIAR?</h3>
+                        </div>
+                        <div class="lista_atendimento">
+                            <div class=" list1">
+                                <i class="fa-solid fa-check"></i>
+                                <p>Produtos especiais</p>
+                            </div>
+                            <div class="lists">
+                                <i class="fa-solid fa-check"></i>
+                                <p>Aula 100% presencial no STUDIO RAMOSS</p>
+                            </div>
+                            <div class="lists">
+                                <i class="fa-solid fa-check"></i>
+                                <p>Desconto para alunos </p>
+                            </div>
+                            <div class="lists">
+                                <i class="fa-solid fa-check"></i>
+                                <p> Avista ou parcelado </p>
+                            </div>
+                            <div class="lists">
+                                <i class="fa-solid fa-check"></i>
+                                <p> Débito, crédito, pix ou boleto </p>
+                            </div>
+                            
+                            <a href="/sobremakes/{{7}}" class="link_btn">SAIBA MAIS</a>
+                        </div>
+                        
+
+
+                    </div>
+            </div>
+        </section>
+
+
+        <section class="container_sobre" id="sobre">
+            <h1>SOBRE A STUDIO RAMOSS</h1>
+            <div class="sobre">
+                <div class="container_informacoes">
+                
+                    <article>
+                        <h2>MAQUIAR É MUDAR UMA VIDA</h2>
+                        <h3>Um sonho e uma paixão pelo seu trabalho</h3>
+                        <p>Investir em um sonho onde muitos desacreditaram, foi o que fez a jovem Paula . Aos 19 anos Paula finalmente está conseguindo montar seu próprio Studio de maquiagem.</p>
+                        <p>O começo dessa realização não foi nada fácil, fazendo maquiagem em casa e em amigas próximas com um tempo diferentes públicos foram sendo atingidos. Com a ajuda das mídias sociais Paula começou a publicar o resultado do seu trabalho, depois de muita luta está conseguindo montar sua própria empresa e trabalhar com o que realmente deseja. Por ser um exemplo de confiança e trabalho duro passou a ser a fonte de inspiração de muitas outras pessoas que possuem sonhos e não pensam em desistir.</p>
+                    </article>
+                    <div class="container_comentario">
+                        <i class="fa-solid fa-heart"></i>
+                        <div class="comentario">
+                            <h3>MAQUIAGEM É MAIS QUE TRANFORMAÇAO</h3>
+                            <p> Acreditamos que podemos mudar a vida e a sua autoestima. Por amarmos o que fazemos, por amarmos o nosso trabalho iremos passar esse sentimento para nossas clientes.</p>
+                            <p>Conte com um atendimento diferenciado, com uma equipe de sucesso você irá sair com um novo olhar para o mundo.</p>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="container_imagens">
+                    <div class="content">
+                        <div class="slides">
+                            <input type="radio" class="check" name="slide" id="slide1" checked>
+                            <input type="radio" class="check" name="slide" id="slide2">
+                            <input type="radio" class="check" name="slide" id="slide3">
+                            <input type="radio" class="check" name="slide" id="slide4">
+                            <input type="radio" class="check" name="slide" id="slide5">
+                
+                            <div class="slide s1">
+                                <img src="{% static 'app_site/img/img_paula/paula4.jpg'%}" alt="">
+                            </div>
+                            <div class="slide">
+                                <img src="{% static 'app_site/img/img_paula/fantasias_paula4.jpg'%}" alt="">
+                            </div>
+                            <div class="slide">
+                                <img src="{% static 'app_site/img/img_paula/fantasias_paula.jpg'%}" alt="">
+                            </div>
+                            <div class="slide">
+                                <img src="{% static 'app_site/img/img_paula/fantasias_paula2.jpg'%}" alt="">
+                            </div>
+                            <div class="slide">
+                                <img src="{% static 'app_site/img/img_paula/fantasias_paula3.jpg'%}" alt="">
+                            </div>
+                        </div>
+                        <div class="navigation">
+                            <label class="bar" for="slide1"></label>
+                            <label class="bar" for="slide2"></label>
+                            <label class="bar" for="slide3"></label>
+                            <label class="bar" for="slide4"></label>
+                            <label class="bar" for="slide5"></label>
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="container_galeria" id="galeria">
+            <h1>GALERIA</h1>
+            <div class="display_galeria">
+                <div class="galeria">
+                    <div class="itemGaleria img1">
+                        <img src="{% static 'app_site/img/img_makes/maquiagem_natural.png'%}" alt="">
+                    </div>
+                    <div class="itemGaleria img2">
+                        <img src="{% static 'app_site/img/img_makes/maquiagem_festa1.png'%}" alt="">
+                    </div>
+                    <div class="itemGaleria img3">
+                        <img src="{% static 'app_site/img/img_makes/maquiagem_sociais.png'%}" alt="">
+                    </div>
+                    
+                    
+                </div>
+                <div class="galeria">
+                    <div class="itemGaleria img4">
+                        <img src="{% static 'app_site/img/img_makes/maquiagem_shimmer.png'%}" alt="">
+                    </div>
+                    <div class="itemGaleria img5">
+                        <img src="{% static 'app_site/img/img_makes/maquiagem_formatura.png'%}" alt="">
+                    </div>
+                    <div class="itemGaleria img6">
+                        <img src="{% static 'app_site/img/img_makes/maquiagem_casamento1.png'%}" alt="">
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+
+        <section class="container_contatos" id="contatos">
+            <h1>CONTATOS</h1>
+            
+            <div class="bg_contato">
+                <h2>OLÁ, QUE TAL CONVERSAR-MOS?</h2>
+                <div class="container_formulario">
+                    <form action="">
+                        <div class="inputs_nome_email">
+                            <input type="text" name="nome" id="nome" placeholder="Nome" required autocomplete="off" class="itensInput">
+                            <input type="text" name="email" id="email_contato" placeholder="Email" required autocomplete="off" class="itensInput">
+                        </div>
+                        <input type="text" name="assunto" id="assunto" placeholder="Assunto" autocomplete="off" required>
+                        <textarea name="menssagem" id="menssagem" cols="30" rows="6" placeholder="Menssagem"></textarea>
+                        <button type="submit">Enviar</button>
+                    </form>
+                </div>
+            </div>
+            <h1>HEY, VAMOS MARCAR NOSSA MAKE?</h1>
+            <div class="contatos_container">
+                
+                <div class="endereco">
+                    <h2>ENDEREÇO</h2>
+                    <p>Rua Major José Vieira | 53 | Studio Ramos</p>
+                    <h2>HORÁRIO DE ATENDIMENTO</h2>
+                    <p>Segunda à Sexta | 08:00 às 20:00</p>
+                    <h3>Faça um agendamento</h3>
+                    <h4>Escolha o seu tipo de atendimento</h4>
+                    <div class="agendamentos_btns">
+                        <a href="https://wa.me/+55+ddd+numero">domiciliar</a>
+                        <p>ou em</p>
+                        <a href="">Nossa loja</a>
+                    </div>
+                </div>
+                <div class="itens_contato">
+                    <h3>AGENDAMENTO</h3>
+                    <div class="contatos_icones">
+                        <div class="contato">
+                            <a href="tel:9999999999"><i class="fa-solid fa-phone"></i></a>
+                        </div>
+                        <div class="contato">
+                            <a href="https://wa.me/+55+ddd+numero" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                        </div>
+                        <div class="contato">
+                            <a href="mailto:studioramos@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <h1>Siga nossas redes sociais</h1>
+            <div class="container_resdesSociais">
+                <div class="redes_sociais">
+                    <a href="" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+                <div class="redes_sociais">
+                    <a href="" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+                <div class="redes_sociais">
+                    <a href="" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+                <div class="redes_sociais">
+                    <a href="" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="container_mapa">
+                <h1>Nos encontre aqui!</h1>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.7984447445483!2d-44.871944285538405!3d-1.8232310369610811!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7f7faf6cd13ccc3%3A0x63a04b1870d56ec6!2sR.%20Maj.%20Jos%C3%A9%20Vi%C3%AAira%2C%20Cururupu%20-%20MA%2C%2065268-000!5e0!3m2!1spt-BR!2sbr!4v1670299271087!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border: 1px solid #17171782; border-radius: 3px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+    </main>
+
+    {% include "footer.html" %}
+</body>
+
+<script>
+    const slides = document.querySelectorAll(".slider");
+    const carousel = document.getElementById("carousel");
+    const left = document.getElementById("left");
+    const direita = document.getElementById("direita");
+
+    const SLIDES_COUNT = slides.length;
+
+    let current_slide = 0;
+
+    left.addEventListener("click", () => {
+        current_slide--;
+    if (current_slide < 0){
+        current_slide = SLIDES_COUNT -1;
+    }
+    updateCarousel();
+    })
+
+    direita.addEventListener("click", () => {
+        current_slide++;
+    if (current_slide > SLIDES_COUNT -1){
+        current_slide = 0
+    }
+    updateCarousel();
+    })
+
+    setInterval(()=>{
+        current_slide++;
+    if (current_slide > SLIDES_COUNT -1){
+        current_slide = 0
+    }
+    updateCarousel();
+
+        
+    },10000)
+
+    function updateCarousel(){
+        carousel.style.transform = `translateX(${
+            -current_slide * slides[0].offsetWidth
+            }px)`;
+        document.body.style.background = `#${slides[current_slide]}`
+    }
+
+    
+    let count = 1;
+    document.getElementById('slide1').checked = true;
+    setInterval(function(){
+        nextImage();
+    }, 5000)
+
+    function nextImage(){
+        count ++;
+        if (count > 5){
+            count = 1;
+        }
+
+        document.getElementById('slide'+count).checked = true;
+    }
+</script>
+</html>

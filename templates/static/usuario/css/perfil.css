@@ -1,0 +1,670 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Sarala:wght@400;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+
+}
+
+body{
+    background-color: #F6F6F6;
+}
+
+
+
+
+#perfil{
+    font-size: 20px;
+    color: #ea6f7b;
+    font-weight: 600;
+}
+
+#pg_sobre{
+    display: none;
+}
+
+#pg_galeria{
+    display: none;
+}
+
+#pg_contato{
+    display: none;
+}
+
+
+
+.contatos_nav{
+    position: absolute;
+    right: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icones_nav_contato a{
+    font-size: 20px;
+    margin: 10px;
+}
+
+
+
+
+main{
+    display: flex;;
+    background-color: rgb(228, 228, 228);
+    width: 100%;
+}
+
+.container_perfil{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    background-color: #171717;
+    box-shadow: 3px 4px 6px rgba(0, 0, 0, 0.427);
+    margin-right: 20px;
+    padding-top: 50px;
+}
+
+.container_titulo h1{
+    font-family: 'Poppins';
+    font-size: 20px;
+    font-weight: 600;
+    margin: 15px;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.327);
+    color: #F6F6F6;
+    text-align: center;
+}
+
+.container_titulo{
+    display: flex;
+    flex-direction: column;
+}
+.container_titulo h2{
+    font-family: 'Poppins';
+    font-size: 16px;
+    font-weight: 600;
+    color: #F6F6F6;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.31);
+    text-align: left;
+}
+
+.container_titulo p{
+    font-family: 'Poppins';
+    font-size: 13px;
+    font-weight: 400;
+    color: #F6F6F6;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.31);
+    text-align: left;
+}
+
+.informacoes_perfil{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
+
+
+#btn_imgPerfil{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+
+.containerImg{
+    border-radius: 100%;
+    height: 150px;
+    width: 150px;
+    cursor: pointer;
+    overflow: hidden;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.305);
+}
+
+
+.containerImg img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.containerImg img:hover{
+    filter: blur(0.8px)
+}
+
+
+
+.container_img_perfil i{
+    font-size: 80px;
+    color: #ea6f7b;
+    padding: 10px;
+}
+
+.containerImgPerfil{
+    display: none;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    background-color: #ea6f7b3b;
+    z-index: 2;
+    top: 0;
+}
+
+
+
+.contentImgPerfil{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: 590px;
+    background-color: #171717;
+    align-items: center;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.29);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 2;
+}
+
+.btn_cancelarImg{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+
+}
+
+.btn_cancelarImg i{
+    font-size: 30px;
+    color: #F6F6F6;
+    cursor: pointer;
+}
+
+.btn_cancelarImg i:hover{
+    color: #ea6f7b;
+}
+.contentImg{
+    display: flex;
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.contentImgPerfil h1{
+    font-family: 'Sarala';
+    font-size: 20px;
+    color: #F6F6F6;
+    margin-bottom: 20px;
+}
+.contentImgPerfil h2{
+    font-family: 'Sarala';
+    font-size: 20px;
+    color: #F6F6F6;
+    margin: 20px;
+
+}
+
+.contentImg a{
+    width: 100px;
+    height: 100px;
+    background-color: #F6F6F6;
+    margin: 10px;
+    border-radius: 100%;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.29);
+    overflow: hidden;
+    border: 2px solid transparent;
+}
+.contentImg a:hover{
+    border: 2px solid #ea6f7b;
+}
+
+.contentImg img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+
+.container_file{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+
+.container_file button{
+    margin-top: 10px;
+    padding: 5px 20px;
+    border-radius: 3px;
+    background-color: #F6F6F6;
+    border: none;
+    font-family: 'Sarala';
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: 600;
+}
+.container_file button:hover{
+    background-color: #ea6f7b;
+}
+
+
+
+.input_file_perfil{
+    display: none;
+}
+
+
+#container_input_file .picture{
+    width: 95px;
+    height: 95px;
+    border-radius: 50%;
+    background-color: #e3e3e3;
+    border: 2px solid #F6F6F6;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    cursor: pointer;
+    color:  rgb(145, 145, 145);
+    font-family: 'Sarala';
+    font-size: 12px;
+    transition: 0.4s all ease;
+    overflow: hidden;
+    
+}
+
+.texto_foto{
+    color:  rgb(145, 145, 145);
+    font-family: 'Sarala';
+    font-size: 60px;
+    position: relative;
+   
+}
+
+#container_input_file .picture:hover{
+    background-color: #e3e3e3;
+    border: 2px dashed rgb(97, 97, 97);
+    
+}
+#container_input_file .picture:active{
+    border: 2px solid rgb(121, 121, 121);
+    
+}
+
+.imagem_perfil{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+ }
+
+
+.dividContets{
+    width: 80%;
+    background-color: #F6F6F6;
+    height: 1px;
+    margin: 50px 20px;
+}
+
+
+
+
+.container_Links{
+    padding: 0px 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn_links{
+    background-color: transparent;
+    border: none;
+    text-decoration: none;
+    color: #F6F6F6;
+    font-family: 'Poppins';
+    font-weight: 500;
+    font-size: 14px;
+    margin: 0px 0px 10px 0px;
+    cursor: pointer;
+}
+.container_Links a{
+    border: none;
+    text-decoration: none;
+    color: #F6F6F6;
+    font-family: 'Poppins';
+    font-size: 14px;
+    margin: 10px 0px;
+    cursor: pointer;
+}
+
+.container_Links a:hover{
+    color: #b78388;
+    text-decoration: underline;
+}
+.btn_links:hover{
+    color: #ea6f7b;
+}
+
+
+.contentLinks{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.contentLinks a{
+    font-size: 13px;
+    font-family: 'Sarala';
+    text-decoration: underline;
+
+}
+
+#titulo_CancelConfiguracao{
+    display: none;
+    color: #ea6f7b;
+}
+
+#titulo_CancelMaquiagem{
+    display: none;
+    color: #ea6f7b;
+}
+
+
+
+.container_agendamentos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 130px;
+    width: 100%;
+    height: 100vh;
+    background-color: #ffffff;
+}
+.container_agendamentos h1{
+    font-family: 'Poppins';
+    font-size: 30px;
+    font-weight: 700;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.327);
+}
+
+
+
+
+
+.container_perfil .btn_cancelar_makea{
+    font-size: 30px;
+    color: rgb(218, 35, 35);
+}
+
+.container_agendamentos table{
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.398);
+    border-radius: 10px;
+    padding: 10px;
+
+}
+
+.container_agendamentos table th{
+    font-family: 'Sarala';
+    font-size: 12px;
+    height: 20px;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #171717;
+    color: #F6F6F6;
+}
+
+
+.container_agendamentos table td{
+    font-family: 'Poppins';
+    font-weight: 500;
+    font-size: 10px;
+    height: 20px;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #d8d8d867;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.114);
+}
+
+
+#btn_agendar{
+    text-decoration: none;
+    margin-top: 40px;
+    background-color: #ea6f7b;
+    padding: 15px 40px;
+    border: 1px solid #171717;
+    border-radius: 3px;
+    font-family: 'Sarala';
+    font-weight: bold;
+    color: white;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.631);
+    cursor: pointer;
+    transition: 0.3s all;
+}
+
+#btn_agendar:hover{
+    background-color: #ea6f7bc9;
+    transform: scale(1.05);
+    border-color: #ea6f7b;
+}
+
+
+#btn_cancelar_make{
+    background-color: rgb(218, 35, 35);
+    padding: 10px 20px;
+    color: #F6F6F6;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+
+#btn_cancelar_make:hover{
+    background-color: rgb(232, 28, 28);
+}
+
+
+.loading{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    height: 100vh;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: #ea6f7b45;
+    z-index: 1;
+}
+
+
+@keyframes loader{
+    0%{
+        transform: rotate(0deg);
+        
+    }
+    100%{
+        transform: rotate(360deg);
+        
+    }
+}
+
+.container_loader{
+    display: block;
+    width: 60px;
+    height: 60px;
+    border: 5px solid #171717;
+    border-top: 5px solid #ea6f7b;
+    border-radius: 50%;
+    background-color: transparent;
+    animation: loader linear 1s infinite ;
+}
+
+
+.menssagem{
+    padding: 15px;
+    background-color: #171717;
+    position: fixed;
+    top: 50px;
+    right: 150px;
+    font-family: 'Poppins';
+    font-size: 14px;
+    color: white;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.385);
+    border-radius: 3px;
+    animation: slider 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+
+
+@keyframes slider{
+    0%{
+        transform: translateX(1000px);
+        opacity: 0;
+        
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+        
+    }
+}
+
+.menssagem::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 0;
+    background-color: #ea6f7b;
+    animation: time 3s forwards;
+}
+
+@keyframes time{
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 100%;
+    }
+
+}
+
+
+.container_admin{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    flex-direction: column;
+}
+
+.container_perfil_admin{
+    width: 50%;
+    margin-top: 50px;
+    background-color: blue;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 20px;
+
+}
+
+.container-posts{
+    padding: 0px 30px;
+    margin-top: 40px;
+    column-count: 4;
+    column-gap: 10px;
+}
+
+.container-posts img{
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+
+
+/* .container_perfil form{
+    display: flex;
+}
+
+.input-arquivo{
+    display: none;
+}
+
+.bloco_arquivo{
+    background-color: rgb(199, 199, 199);
+    padding: 7px 10px;
+    border-radius: 20px ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#imagem-arquivo{
+    font-family: 'Poppins';
+    font-size: 16px; 
+    color: black;
+    font-weight: 500;
+    margin-left: 20px;
+    display: none;
+}
+
+.bloco_arquivo label{
+    font-family: 'Sarala';
+    font-size: 14px;
+    background-color: rgb(41, 41, 41);
+    padding: 5px 30px;
+    color: white;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.botao-enviar{
+    margin-left: 20px;
+    padding: 7px 15px;
+    border-radius: 10px;
+    background-color: rgb(228, 20, 20);
+    font-family: 'Poppins';
+    font-size: 16px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+
+.container-posts{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.container_img{
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    border: none;
+    margin: 5px;
+}
+
+.container_img img{
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+} */

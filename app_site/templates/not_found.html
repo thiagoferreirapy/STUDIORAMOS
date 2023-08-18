@@ -1,0 +1,19 @@
+{% load static%}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'app_site/css/not_found2.css' %}">
+    <title>VOCÊ ESTÁ PERDIDO?</title>
+</head>
+<body>
+    <img src="{% static 'app_site/img/1.png' %}" alt="">
+    <h1>Not Found </h1>
+    <h2>404</h2>
+    <h3>Essa página não foi criada...</h3>
+    <a href="{% url 'home' %}">Volte ao Home</a>
+</body>
+</html>

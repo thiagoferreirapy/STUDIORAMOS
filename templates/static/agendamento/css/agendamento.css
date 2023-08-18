@@ -1,0 +1,764 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800;900&family=Sarala:wght@400;700&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;    
+}
+
+#pg_sobre{
+    display: none;
+}
+
+#pg_contato{
+    display: none;
+}
+
+#pg_galeria{
+    display: none;
+}
+
+#pg_home{
+    color: #F6F6F6;
+}
+#pg_home:hover{
+    color: #ea6f7b;
+}
+
+#pg_agendamento{
+    color: #ea6f7b;
+    font-weight: 600;
+}
+
+
+main{
+    display: flex;
+    justify-content: space-between;
+}
+
+.informacoes_makes{
+    width: 60%;
+    background-color: #ffff;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.379);
+}
+
+.menu_makes{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.menu_makes video{
+    z-index: 1;
+}
+
+
+.menu_makes h1{
+    position: absolute;
+    top: 25%;
+    left: 10%;
+    z-index: 1;
+    font-family: 'Sarala';
+    font-size: 70px;
+    color: white;
+    text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.538);
+    mix-blend-mode: overlay;
+}
+.menu_makes p{
+    position: absolute;
+    top: 35%;
+    left: 12.5%;
+    z-index: 1;
+    font-family: 'Sarala';
+    font-size: 25px;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.477);
+    mix-blend-mode: overlay;
+}
+
+
+.experiancias{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 45px;
+    margin-top: 60px;
+    width: 90%;
+    
+}
+
+.experiancias h1{
+    font-family: 'Poppins';
+    font-size: 30px;
+    color: #171717;
+    font-weight: 500;
+    line-height: 2px;
+}
+
+.container_exp{
+    margin-top: 50px;
+    border: 1px solid #1717178d;
+    border-radius: 7px;
+    width: 100%;
+    /* display: flex;
+    align-items: center; 
+    justify-content: space-around;
+    */
+    padding: 10px;
+    column-count:3;
+    column-gap: 10px;
+}
+
+.container_exp img{
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.container_experiencias{
+    display: flex;
+    flex-direction: column;
+    background-color: #efefefe8;
+    width: 250px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.187);
+    align-items: center;
+
+}
+
+.container_experiencias img{
+    width: 150px;
+    padding: 5px;
+}
+
+.container_experiencias h2{
+    font-family: 'Poppins';
+    font-size: 20px;
+    color: #171717;
+    font-weight: 500;
+    line-height: 15px;
+}
+.container_experiencias h3{
+    font-family: 'Poppins';
+    font-size: 16px;
+    color: #171717;
+    font-weight: 500;
+    
+}
+.container_experiencias h4{
+    font-family: 'Sarala';
+    font-size: 16px;
+    color: #171717;
+    font-weight: 900;
+    
+}
+
+.estrelas{
+    display: flex;
+}
+
+.estrelas i{
+    color: #ea6f7b;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.agendamento{
+    width: 500px;
+    background-color: #ffff;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;
+    padding-left: 50px;
+}
+
+.escolhas_agendamento{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-bottom: 1px solid #171717b9;
+    width: 400px;
+    margin-top: 20px;
+}
+
+.buttons_agendamento{
+    margin-bottom: 40px;
+    text-align: center;
+}
+.escolhas_agendamento .buttons_agendamento a{
+    margin: 5px;
+    text-align: none;
+    font-size: 12px;
+    border: 1px solid #171717;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
+
+
+
+
+.escolhas_agendamento a{
+    text-decoration: none;
+    font-family: 'Poppins';
+    font-size: 13px;
+    color: #171717;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.escolhas_agendamento a:hover{
+    color: #ea6f7b;
+}
+.escolhas_agendamento i{
+    font-size: 16px;
+    margin: 10px;
+    color: rgb(255, 115, 0);
+}
+.escolhas_agendamento h1{
+    font-family: 'Sarala';
+    font-size: 30px;
+    color: #171717;
+    font-weight: 500;
+}
+.escolhas_agendamento label{
+    font-family: 'Poppins';
+    font-size: 13px;
+    color: #171717;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.escolhas_agendamento span{
+    font-family: 'Sarala';
+    font-size: 12px;
+    font-weight: bold;
+    color: red;
+    display: none;
+}
+
+.escolhas_agendamento p{
+    font-family: 'Sarala';
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+
+#tipo_make{
+    font-family: 'Sarala';
+    font-size: 13px;
+    color: #171717;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #171717b9;
+}
+
+#tipo_extra{
+    font-family: 'Sarala';
+    font-size: 13px;
+    color: #171717;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #171717b9;
+}
+
+.opcoes_make{
+    font-family: 'Sarala';
+    font-weight: 900;
+    font-size: 12px;
+}
+
+.contem_preco{
+    font-family: 'Sarala';
+    font-weight: 900;
+    font-size: 12px;
+    margin-top: 20px;
+    background-color: #171717;
+    padding: 12px;
+    border-radius: 5px;
+    color: white;
+}
+
+#escolha_data{
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #171717b9;
+    font-family: 'Sarala';
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    margin-bottom: 20px;
+}
+
+
+
+#hora_atendimento{
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #171717b9;
+    font-family: 'Sarala';
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    margin-bottom: 20px;
+}
+
+#escolha_loja{
+    font-family: 'Sarala';
+    font-size: 13px;
+    color: #171717;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #171717b9;
+}
+
+#cpf{
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #171717b9;
+    font-family: 'Sarala';
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    margin-bottom: 20px;
+}
+
+#nome{
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #171717b9;
+    font-family: 'Sarala';
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    margin-bottom: 20px;
+}
+
+#Email{
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #171717b9;
+    font-family: 'Sarala';
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    margin-bottom: 20px;
+}
+
+.escolher_funcionario{
+    height: 300px;
+}
+
+
+.funcionarios{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: left;
+    padding: 10px;
+}
+.escolher_funcionario label{
+    width: 150px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    margin: 5px 10px;
+    text-align: center;
+    cursor: pointer;
+}
+.escolher_funcionario label:hover{
+    color: #ea6f7b;
+    
+}
+
+.escolher_funcionario input{
+    display: none;
+
+}
+
+.escolher_funcionario img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.escolher_funcionario label h3{
+    font-size: 14px;
+    font-weight: 500;
+    margin: 5px;
+}
+
+.concluir_agendamento{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 400px;
+    margin-top: 20px;
+    text-align: justify;
+}
+
+.concluir_agendamento span{
+    font-family: 'Sarala';
+    font-size: 12px;
+    font-weight: bold;
+    color: red;
+    display: none;
+}
+
+.concluir_agendamento p{
+    font-family: 'Poppins';
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 15px;
+    line-height: 15px;
+}
+.concluir_agendamento a{
+    font-family: 'Poppins';
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 15px;
+    color: #171717;
+}
+.concluir_agendamento a:hover{
+    color: #ea6f7b;
+}
+
+.confirmacao{
+    display: flex;
+    margin: 10px;
+}
+
+.confirmacao p{
+    font-family: 'Poppins';
+    font-size: 14px;
+    font-weight: 500;
+    margin-left: 10px;
+}
+.confirmacao a{
+    font-family: 'Poppins';
+    font-size: 14px;
+    font-weight: 500;
+    margin-left: 10px;
+}
+.confirmacao a:hover{
+    color: #ea6f7b;
+}
+
+
+
+#btn_concluir_agendamento{
+    padding: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #171717;
+    width: 250px;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-family: 'Sarala';
+    font-weight: bold;
+    cursor: pointer;
+}
+#btn_concluir_agendamento:hover{
+    background-color: #ea6f7b;
+    color: #171717;
+}
+
+
+
+#confirmar_agendamento{
+    display: none;
+    width: 100%;
+    position: fixed;
+    top: 0%;
+    background-color: #ffffff;
+    height: 100%;
+    z-index: 1;
+    opacity: 98%;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+#confirmar_agendamento .forms{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10px;
+    justify-content: center;
+}
+#confirmar_agendamento .forms h1{
+    font-family: 'Poppins';
+    color: rgb(57, 54, 54);
+    font-size: 30px;
+    font-weight: 700;
+    margin-left: 10px;
+    text-align: center;
+}
+#confirmar_agendamento .forms h2{
+    font-family: 'Poppins';
+    color: rgb(57, 54, 54);
+    font-size: 20px;
+    font-weight: 700;
+    margin-left: 10px;
+    text-align: center;
+   
+}
+
+.btn_confirmar_agendamento{
+    display: flex;
+    margin: 10px;
+    
+}
+
+.btn_confirmar_agendamento button{
+    padding: 7px;
+    color: white;
+    background-color: #171717;
+    margin: 5px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 0.3s all;
+    font-family: 'Poppins';
+    font-weight: bold;
+    width: 150px;
+}
+.btn_confirmar_agendamento button:hover{
+    transform: scale(1.04);
+    background-color: #5e5455;
+    
+
+}
+
+
+.confirmarEscolhas{
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    background-color: #171717;
+    opacity: 100%;
+    border-radius: 3px;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.431);
+
+}
+
+.divis_valores{
+    padding: 10px;
+    margin: 5px;
+    font-family: 'Sarala';
+    font-size: 12px;
+    font-weight: bold;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.393);
+    color: black;
+    background-color: #ffffff;
+}
+
+.confirmarEscolhas label{
+    font-family: 'Poppins';
+    color: rgb(227, 227, 227);
+    font-size: 14px;
+    font-weight: 500;
+    margin-left: 10px;
+
+}
+.confirmarEscolhas input{
+    display: none;
+    
+}
+
+#total_preco{
+    text-align: center;
+    font-size: 14px;
+}
+
+.butons{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#btn_confirmar{
+    padding: 10px;
+    margin: 10px;
+    width: 150px;
+    font-family: 'Sarala';
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.393);
+    color: black;
+    background-color: #0d9a82;
+    text-align: center;
+}
+
+#btn_cancelar{
+    text-decoration: none;
+    text-align: center;
+    padding: 10px;
+    width: 150px;
+    margin: 10px;
+    font-family: 'Sarala';
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.393);
+    color: black;
+    background-color: rgb(218, 35, 35);
+    cursor: pointer;
+}
+
+.loading{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    height: 100vh;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: #ea6f7b45;
+    z-index: 1;
+}
+
+
+@keyframes loader{
+    0%{
+        transform: rotate(0deg);
+        
+    }
+    100%{
+        transform: rotate(360deg);
+        
+    }
+}
+
+.container_loader{
+    display: block;
+    width: 60px;
+    height: 60px;
+    border: 5px solid #171717;
+    border-top: 5px solid #ea6f7b;
+    border-radius: 50%;
+    background-color: transparent;
+    animation: loader linear 1s infinite ;
+}
+
+
+.menssagem{
+    padding: 15px;
+    background-color: #171717;
+    position: fixed;
+    top: 50px;
+    right: 150px;
+    font-family: 'Poppins';
+    font-size: 14px;
+    color: white;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.385);
+    border-radius: 3px;
+    animation: slider 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    display: none;
+}
+
+
+
+@keyframes slider{
+    0%{
+        transform: translateX(1000px);
+        opacity: 0;
+        
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+        
+    }
+}
+
+.menssagem::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 0;
+    background-color: #ea6f7b;
+    animation: time 30s forwards;
+}
+
+@keyframes time{
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 100%;
+    }
+
+}
+
+
+.menssagem2{
+    padding: 15px;
+    background-color: #ea5656;
+    position: fixed;
+    top: 50px;
+    right: 150px;
+    font-family: 'Poppins';
+    font-size: 14px;
+    color: white;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.385);
+    border-radius: 3px;
+    animation: slider 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    display: none;
+}
+
+.menssagem2::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 0;
+    background-color: #ea6f7b;
+    animation: time2 5s forwards;
+}
+
+@keyframes time2{
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 100%;
+    }
+
+}

@@ -1,0 +1,365 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'agendamento/css/teste2.css' %}">
+    <script src="https://kit.fontawesome.com/dc37c7fe1c.js" crossorigin="anonymous"></script>
+    <title>Home STUDIO RAMOSS</title>
+</head>
+<body>
+
+    <form action="{% url 'cadastrar_data' %}" method="post">{% csrf_token %}
+        <h1>data</h1>
+        <input type="number" name="data" placeholder="Data">
+        <input type="number" name="mes" placeholder="Mês">
+        
+        <input type="number" name="horario" placeholder="horario">
+
+        <button type="submit">cadastrar</button>
+    </form>
+
+    <form action="{% url 'cadastrar_data' %}" method="post">{% csrf_token %}
+        <h1>DATA AUTO</h1>
+        <input type="number" name="data_auto" placeholder="Dias no mês">
+        <input type="number" name="mes" placeholder="Mês">
+        <input type="checkbox" name="horarios_auto" id="horarios_auto">
+        <br>
+        <input type="number" name="horario" placeholder="horario">
+        <input type="number" name="horario2" placeholder="horario2">
+        <input type="number" name="horario3" placeholder="horario3">
+        <input type="number" name="horario4" placeholder="horario4">
+        <input type="number" name="horario5" placeholder="horario5">
+        <input type="number" name="horario6" placeholder="horario6">
+        <input type="number" name="horario7" placeholder="horario7">
+        <input type="number" name="horario8" placeholder="horario8">
+        <input type="number" name="horario9" placeholder="horario9">
+        <input type="number" name="horario10" placeholder="horario10">
+        <button type="submit">cadastrar</button>
+    </form>
+    <form action="{% url 'cadastrar_horario' %}" method="post">{% csrf_token %}
+        <h1>HORARIOS</h1>
+        <input type="number" name="data" placeholder="Dia selecionado">
+        <input type="number" name="mes" placeholder="Mês">
+        <input type="number" name="horarios" id="horarios">
+        <br>
+        
+        <button type="submit">cadastrar</button>
+    </form>
+    
+    <br>
+    <section class="container_agendamentos" id="container_agendamentos">
+        <div class="container_img">
+            <img src="{% static 'agendamento/img/img_make.jpg' %}" alt="">
+        </div>
+        <div class="table">
+            <div class="content_calendario_semana">
+                    <div class="content_semana">Dom</div>
+                    <div class="content_semana">Seg</div>
+                    <div class="content_semana">Ter</div>
+                    <div class="content_semana">Qua</div>
+                    <div class="content_semana">Qui</div>
+                    <div class="content_semana">Sex</div>
+                    <div class="content_semana">Sab</div>
+            </div>
+
+            <div class="number_days">
+                {% if semana == 1 %} <!-- Segunda -->
+                    <span></span>
+                    
+                {% elif semana == 2 %} <!-- Terça-->
+                    <span></span>
+                    <span></span>
+
+                {% elif semana == 3 %} <!-- Quarta -->
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                {% elif semana == 4 %} <!-- Quinta -->
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                {% elif semana == 5 %} <!-- Sexta -->
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                {% elif semana == 6 %} <!-- Sabado -->
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                {% elif semana == 6 %} <!-- Domingo -->
+                    
+                {% endif %}
+                {% for data in data %}
+                    
+                    {% if data.data > dia_selecionado %}
+                    <span><button class="days" onclick="escolhaHorario('{{data.id}}')">{{ data.data }}</button></span>
+                        
+                    {% elif data.data == dia_selecionado %}
+                    
+                        <span><button class="select_day" onclick="escolhaHorario('{{data.id}}')">{{ data.data }}</button></span>
+                    {% else %}
+                    <span><button disabled class="defalt_day">{{ data.data }}</button></span>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <br>
+            
+            
+        </div>
+    </section>
+
+    <section id="content_horarios">
+        <h1 id="titulo_horarios">HORÁRIOS DISPONIVEIS PARA O DIA <input type="text" disabled  id="dia_selecionado" value=""></h1>
+        <div class="container_horarios"> 
+            <button onclick="confirmarData(1)" id="horario" value="" ></button>
+            <button onclick="confirmarData(2)" id="horario2" value="" ></button>
+            <button onclick="confirmarData(3)" id="horario3" value="" ></button>
+            <button onclick="confirmarData(4)" id="horario4" value="" ></button>
+            <button onclick="confirmarData(5)" id="horario5" value="" ></button>
+            <button onclick="confirmarData(6)" id="horario6" value="" ></button>
+            <button onclick="confirmarData(7)" id="horario7" value="" ></button>
+            <button onclick="confirmarData(8)" id="horario8" value="" ></button>
+            <button onclick="confirmarData(9)" id="horario9" value="" ></button>
+            <button onclick="confirmarData(10)" id="horario10" value="" ></button>
+        </div>
+    </section>
+</body>
+<script>
+    function escolhaHorario(id){
+        data_id = id
+        csrf_token = document.querySelector('[name=csrfmiddlewaretoken]').value
+
+        data = new FormData()
+        data.append('data_id', data_id)
+
+        fetch("/agendamento/verHorario/", {
+            method: 'POST',
+            headers: {
+                'X-CSRFToken': csrf_token,
+            },
+            body: data
+
+        }).then(function(result){
+            return result.json()
+        }).then(function(data){
+            console.log(data)
+            
+            document.getElementById('content_horarios').style.display = 'flex';
+            dia = document.querySelector('#dia_selecionado')
+            dia.value = data['data']
+
+            
+
+            horario = document.getElementById('horario')
+            horario2 = document.getElementById('horario2')
+            horario3 = document.getElementById('horario3')
+            horario4 = document.getElementById('horario4')
+            horario5 = document.getElementById('horario5')
+            horario6 = document.getElementById('horario6')
+            horario7 = document.getElementById('horario7')
+            horario8 = document.getElementById('horario8')
+            horario9 = document.getElementById('horario9')
+            horario10 = document.getElementById('horario10')
+
+
+
+            if (data['horario1']){
+                
+                horario.value = data['horario1'] + ':00' 
+                horario.innerText = data['horario1']['horario'] + ':00' 
+                horario.style.display = "flex"
+
+                if (data['horario1']['descricao'] == 'agendado'){
+                    horario.style.display = "none"
+                }
+            }else{
+                
+                horario.style.display = "none"
+            }
+            if(data['horario2']){
+                
+                horario2.value = data['horario2']['horario'] + ':00'
+                horario2.innerText = data['horario2']['horario'] + ':00'
+                horario2.style.display = "flex"
+
+                if (data['horario2']['descricao'] == 'agendado'){
+                    horario.style.display = "none"
+                }
+            }else{
+                
+                horario2.style.display = "none"
+            
+            }
+            if(data['horario3']){
+                
+                horario3.value = data['horario3']['horario'] + ':00'
+                horario3.innerText = data['horario3']['horario'] + ':00'
+                horario3.style.display = "flex"
+
+                if (data['horario3']['descricao'] == 'agendado'){
+                    horario.style.display = "none"
+                }
+
+            }else{
+                
+                horario3.style.display = "none"
+
+            }
+
+            if(data['horario4']){
+                
+                horario4.value = data['horario4']['horario'] + ':00'
+                horario4.innerText = data['horario4']['horario'] + ':00'
+                horario4.style.display = "flex"
+
+                if (data['horario4']['descricao'] == 'agendado'){
+                    horario.style.display = "none"
+                }
+            }else{
+                
+                horario4.style.display = "none"
+
+            }
+            
+            if(data['horario5']){
+                
+                horario5.value = data['horario5']['horario'] + ':00'
+                horario5.innerText = data['horario5']['horario'] + ':00'
+                horario5.style.display = "flex"
+
+                if (data['horario5']['descricao'] == 'agendado'){
+                    horario.style.display = "none"
+                }
+            }else{
+                
+                horario5.style.display = "none"
+
+            }
+            
+            if(data['horario6']){
+                
+                horario6.value = data['horario6']['horario'] + ':00'
+                horario6.innerText = data['horario6']['horario'] + ':00'
+                horario6.style.display = "flex"
+
+                if (data['horario6']['descricao'] == 'agendado'){
+                    horario.style.display = "none"
+                }
+            }else{
+                
+                horario6.style.display = "none"
+
+            }
+            
+            if(data['horario7']){
+                
+                horario7.value = data['horario7']['horario'] + ':00'
+                horario7.innerText = data['horario7']['horario'] + ':00'
+                horario7.style.display = "flex"
+
+                if (data['horario7']['descricao'] == 'agendado'){
+                    horario.style.display = "none"
+                }
+            }else{
+                
+                horario7.style.display = "none"
+
+            }
+            
+            if(data['horario8']){
+                
+                horario8.value = data['horario8']['horario'] + ':00'
+                horario8.innerText = data['horario8']['horario'] + ':00'
+                horario8.style.display = "flex"
+
+                if (data['horario8']['descricao'] == 'agendado'){
+                    horario.style.display = "none"
+                }
+            }else{
+                
+                horario8.style.display = "none"
+
+            }
+            
+            if(data['horario9']){
+                
+                horario9.value = data['horario9']['horario'] + ':00'
+                horario9.innerText = data['horario9']['horario'] + ':00'
+                horario9.style.display = "flex"
+
+                if (data['horario9']['descricao'] == 'agendado'){
+                    horario.style.display = "none"
+                }
+            }else{
+                
+                horario9.style.display = "none"
+
+            }
+            
+            if(data['horario10']){
+                
+                horario10.value = data['horario10']['horario'] + ':00'
+                horario10.innerText = data['horario10']['horario'] + ':00'
+                horario10.style.display = "flex"
+
+                if (data['horario10']['descricao'] == 'agendado'){
+                    horario.style.display = "none"
+                }
+            }else{
+                
+                horario10.style.display = "none"
+            }
+        
+        
+        
+        
+        
+        
+        })
+    }
+
+    function confirmarData(id){
+        data_id = document.getElementById('dia_selecionado').value
+        horario_id = id
+        csrf_token = document.querySelector('[name=csrfmiddlewaretoken]').value
+
+        data = new FormData()
+        data.append('data_id', data_id)
+        data.append('horario_id', horario_id)
+
+        fetch("/usuario/validarAgendamento/", {
+            method: 'POST',
+            headers: {
+                'X-CSRFToken': csrf_token,
+            },
+            body: data
+
+        }).then(function(result){
+            return result.json()
+        }).then(function(data){
+            
+            console.log(data)
+        
+        
+        
+        
+        
+        
+        })
+    }
+
+
+</script>
+</html>

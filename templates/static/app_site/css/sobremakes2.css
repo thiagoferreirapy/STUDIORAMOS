@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Sarala:wght@400;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+
+}
+
+
+body{
+   background-color: #F6F6F6;
+   
+}
+
+
+main{
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.container_galeria_fotos{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+
+.galeria_fotos{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.titulo_foto{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px;
+    height: 150px;
+    background-color: #ea6f7b;
+    
+}
+
+.titulo_foto h1{
+    font-family: 'Sarala';
+    font-size: 30px;
+    color: #ffffff;
+    font-weight: 700;
+    text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.299);
+}
+
+
+
+.galeria{
+
+    width: 100%;
+    padding: 15px;
+    column-count: 4;
+    column-gap: 10px;
+
+}
+
+.galeria img{
+    width: 100%;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: 0.3s all ease-in-out;
+    
+}
+
+.galeria img:hover{
+    opacity: 90%;
+}
+
+
+.loading{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ea6f7b45;
+    z-index: 1;
+}
+
+
+@keyframes loade{
+    0%{
+        transform: rotate(0deg);
+        
+    }
+    100%{
+        transform: rotate(360deg);
+        
+    }
+}
+
+.container_loader{
+    display: flex;
+    width: 60px;
+    height: 60px;
+    border: 5px solid #171717;
+    border-top: 5px solid #ea6f7b;
+    border-radius: 50%;
+    background-color: transparent;
+    animation: loade linear 1s infinite ;
+}
+
+
+
+/* animação */
+
+[data-anime] {
+    opacity: 0;
+    transition: .3s;
+  }
+  
+  [data-anime="left"] {
+    transform: translate3d(-50px, 0, 0);
+  }
+  
+  [data-anime="right"] {
+    transform: translate3d(50px, 0, 0);
+  }
+  
+  [data-anime="top"] {
+    transform: translate3d(0, -30px, 0);
+  }
+  
+  [data-anime].animate {
+    opacity: 1;
+    transform: translate3d(0px, 0px, 0px);
+  }

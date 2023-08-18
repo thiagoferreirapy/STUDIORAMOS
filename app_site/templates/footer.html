@@ -1,0 +1,70 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'app_site/css/footer.css' %}">
+<footer>
+    <section class="links_footer">
+        <div class="container_links perguntas">
+            <a href="{% url 'privacidade' %}" target="_blank"><h3>PERGUNTAS FREQUENTES</h3></a>
+            <p>Formas de Pagamento?</p>
+            <p>Cancelar Agendamento?</p>
+            <p>Atendimento a Domicílio?</p>
+            <p>O que são Cookies?</p>
+            <p>Dúvidas Sobre dados?</p>
+            <p>Política de Privacidade</p>
+        </div>
+
+        <div class="container_links uteis">
+            <h3>LINKS ÚTEIS</h3>
+            <a href="{% url 'central_atendimento' %}" target="_blank">Central de Atendimento</a>
+            <a href="{% url 'central_atendimento' %}" target="_blank">Dúvidas sobre Procedimentos?</a>
+            <a href="https://www.procon.df.gov.br/wp-content/uploads/2019/08/Codigo-do-consumidor-FINAL.pdf" target="_blank">Código da defesa do Consumidor</a>
+            <a href="{% url 'privacidade' %}" target="_blank">Termos de Uso</a>
+            <a href="">Trabalhe Conosco</a>
+            <a href="{% url 'agendamento' %}">Faça sua Make</a>
+        </div>
+        <div class="dividi_links">
+            <div class="container_links contatos">
+                <h3>CONTATOS</h3>
+                <div class="icones_contato">
+                    <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    <a href=""><i class="fa-brands fa-facebook"></i></a>
+                    <a href=""><i class="fa-solid fa-envelope"></i></a>
+                    <a href=""><i class="fa-solid fa-phone"></i></a>
+                </div>
+                
+            
+            </div>
+            <div class="container_pagamentos">
+                <h3>PAGAMENTO</h3>
+                <div class="icones_pagamentos">
+                    <i class="fa-brands fa-cc-mastercard"></i>
+                    <i class="fa-brands fa-cc-visa"></i>
+                    <i class="fa-brands fa-cc-paypal"></i>
+                    <i class="fa-brands fa-pix"></i>
+                    
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <section class="pagamentos_cadastro">
+        <div class="container_cadastro">
+            <h3>Deixe seu Email e fique por dentro das novidades e ofertas quentinhas</h3>
+            <div class="cadastro">
+                <form action="">
+                    <input type="email" name="email" id="email" placeholder="Email" required>
+                    <input type="submit" value="Enviar" id="btn_cadastrar">
+                </form>
+            </div>
+            <p>Ao Enviar você irá concordar com nossa <a href="">Política de Privacidade</a>. </p>
+        </div> 
+        <div class="localizacao">
+            <h3>STUDIO RAMOS</h3>
+            <p>Localizada em algum canto do mundo...|CNPJ: ######/####-##</p>
+            <div class="mapa2">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.7984447445483!2d-44.871944285538405!3d-1.8232310369610811!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7f7faf6cd13ccc3%3A0x63a04b1870d56ec6!2sR.%20Maj.%20Jos%C3%A9%20Vi%C3%AAira%2C%20Cururupu%20-%20MA%2C%2065268-000!5e0!3m2!1spt-BR!2sbr!4v1670299271087!5m2!1spt-BR!2sbr" width="450px" height="150" style="border: 1px solid #17171782; border-radius: 3px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+        
+       
+    </section>
+</footer>

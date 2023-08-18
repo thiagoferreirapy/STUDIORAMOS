@@ -1,0 +1,926 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Sarala:wght@400;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+
+}
+
+
+body{
+   background-color: #F6F6F6;
+}
+
+
+#contato_wats{
+    position: fixed;
+    top: 85%;
+    left: 2%;
+    background-color: green;
+    height: 70px;
+    width: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 45px;
+    color: #fff;
+    opacity: 80%;
+    text-decoration: none;
+    
+}
+
+
+.container_principal{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    align-items: center;
+    justify-content: space-around;
+    background-image: url(../img/pincelhome.png);
+    background-size: cover;
+}
+
+.container_principal img{
+    width: 500px;
+    
+}
+
+.container_marca{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.container_marca p{
+    color: rgb(255, 255, 255);
+    font-family: 'Poppins';
+    line-height: 0px;
+    font-size: 20px;
+    font-weight: 600;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.342);
+}
+.container_marca #btn_agendar{
+    text-decoration: none;
+    margin-top: 40px;
+    background-color: #ea6f7b;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 3px;
+    font-family: 'Sarala';
+    font-weight: bold;
+    color: white;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.631);
+    cursor: pointer;
+    transition: 0.3s all;
+}
+.container_marca a:hover{
+    background-color: #ea6f7bc9;
+    transform: scale(1.05);
+    border-color: #ea6f7b;
+}
+
+.container_marca h1{
+    color: #ea6f7b;
+    font-size: 100px;
+    text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.37);
+}
+
+
+
+.principal{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #171717;
+    flex-direction: column;
+}
+
+.principal h1{
+    font-family: 'Sarala';
+    color: #F6F6F6;
+    font-size: 50px;
+    margin: 20px ;
+}
+
+
+.carousel_container{
+    overflow: hidden;
+    position: relative;
+    height: 80vh;
+    width: 95vw;
+    margin-top: 1rem;
+}
+.carousel{
+    display: flex;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translateX(0);
+    transition: transform 0.4s ease-in-out;
+}
+
+.slider{
+    width: 100vw;
+    text-align: center;
+    
+}
+
+.slider img{
+    object-fit: cover;
+    height: 500px;
+    width: 100%;
+}
+
+.slider h1{
+    position: relative;
+    color: white;
+    font-size: 40px;
+    font-family: 'Poppins';
+    font-weight: 600;
+    bottom: 200px;
+    text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.324);
+}
+
+.link_make{
+    padding: 7px 20px;
+    border-radius: 3px;
+    font-size: 20px;
+    font-family: 'Poppins';
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    border: 2px solid white;
+    position: relative;
+    bottom: 170px;
+}
+
+.link_make:hover{
+    background-color: #17171736;
+}
+
+.seta{
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    transform: translateY(-40%);
+    font-size: 35px;
+    opacity: 0.8;
+    font-weight: bolder;
+    color: #F6F6F6;
+}
+
+.seta:hover{
+    color: #ea6f7b;
+}
+
+.seta_esquerda{
+    left: 2rem;
+}
+
+.seta_direita{
+    right: 2rem;
+}
+
+
+
+.container_maquiagens_atendimento{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #171717;
+}
+
+.container_maquiagens_atendimento h1{
+    font-family: 'Sarala';
+    color: #F6F6F6;
+    font-size: 50px;
+    margin: 20px ;
+}
+
+.conatiner_atendimento{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+
+.atendimento{
+    width: 250px;
+    background-color: #F6F6F6;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 3px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.titulo_atendimento{
+    width: 100%;
+    height: 110px;
+    background-color: #ea6f7b;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.titulo_atendimento h2{
+    font-family: 'Sarala';
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px 0px;
+    color: #F6F6F6;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.195);
+}
+.titulo_atendimento h3{
+    font-family: 'Sarala';
+    font-size: 14px;
+    font-weight: bold;
+    margin: 10px 0px;
+    color: #F6F6F6;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.195);
+    text-align: center;
+}
+
+.lista_atendimento{
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: left;
+}
+
+.list1{
+    border-top: none;
+    display: flex;
+    width: 100%;
+    padding: 10px;
+}
+
+.lists{
+    display: flex;
+    width: 100%;
+    border-top: 2px solid rgba(103, 103, 103, 0.384);
+    padding: 10px;
+    align-items: center;
+    
+}
+
+
+.lists i{
+    font-size: 14px;
+    margin-right: 10px;
+    color: #136f43c2;
+}
+.list1 i{
+    font-size: 14px;
+    margin-right: 10px;
+    color: #136f43c2;
+}
+
+.lists p{
+    font-family: 'Poppins';
+    font-size: 14px;
+    font-weight: 600;
+    color: #373737;
+    
+}
+.list1 p{
+    font-family: 'Poppins';
+    font-size: 14px;
+    font-weight: 600;
+    color: #373737;
+    
+}
+
+.link_btn{
+    padding: 10px 20px;
+    background-color: #373737;
+    border-radius: 3px;
+    text-decoration: none;
+    font-family: 'Sarala';
+    font-size: 14px;
+    color: #F6F6F6;
+    transition: 0.3s all ease;
+    margin-top: 10px;
+}
+
+.link_btn:hover{
+    background-color: #ea6f7b;
+}
+
+
+
+
+
+.container_sobre{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+.sobre{
+    width: 100%;
+    display: flex;
+    margin-bottom: 100px;
+}
+
+.container_sobre h1{
+    font-family: 'Sarala';
+    color: #171717;
+    font-size: 50px;
+    margin: 30px 0px;
+    text-align: center;
+}
+.container_informacoes{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+}
+
+
+article{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 350px;
+    padding: 30px;
+    text-align: justify;
+    align-items: center;
+    border-radius: 5px;
+}
+
+article h2{
+    font-family: 'Sarala';
+    font-size: 25px;
+    color: #171717;
+}
+article h3{
+    font-family: 'Sarala';
+    font-size: 20px;
+    color: #171717;
+    margin-bottom: 10px;
+}
+article p{
+    font-family: 'Poppins';
+    font-size: 13px;
+    color: #171717;
+    margin-bottom: 10px;
+    font-weight: 500;
+    line-height: 16px;
+}
+
+
+
+.container_comentario{
+    display: flex;
+    width: 80%;
+    background-color: #ea6f7b3d;
+    height: 250px;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.479);
+}
+.container_comentario i{
+    font-size: 35px;
+    color: #ea6f7b;
+    margin-right: 20px;
+    background-color: #171717c6;
+    height: 55px;
+    padding: 10px;
+    border-radius: 100%;
+}
+
+
+.comentario{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    text-align: justify;
+    align-items: center;
+    border-radius: 5px;
+}
+.comentario h3{
+    font-family: 'Poppins';
+    font-size: 14px;
+    color: #171717;
+    margin-bottom: 10px;
+}
+.comentario p{
+    font-family: 'Sarala';
+    font-size: 14px;
+    color: #171717;
+    margin-bottom: 10px;
+    line-height: 16px;
+    font-weight: 500;
+}
+
+
+
+
+
+
+
+
+
+.container_imagens{
+    padding: 30px;
+}
+
+
+.content{
+    height: 600px;
+    width: 550px;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.422);
+}
+
+.navigation{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%);
+    display: none;
+    
+    
+}
+
+.bar{
+    width: 7px;
+    height: 7px;
+    border: 2px solid #11111fac;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+    transition: 0.5s all;
+    box-shadow: 1px 1px 1px #11111f63;
+}
+.bar:hover{
+    background-color: #ffff;
+    box-shadow: 1px 1px 3px  white;
+    transform: scale(1.05);
+}
+
+.check{
+    display: none;
+}
+
+.slides{
+    display: flex;
+    width: 500%;
+    height: 100%;
+    
+}
+
+.slide{
+    width: 20%;
+    transition: 0.6s;
+}
+
+.slide img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#slide1:checked ~ .s1{
+    margin-left: 0;
+}
+
+#slide2:checked ~ .s1{
+    margin-left: -20%;
+}
+#slide3:checked ~ .s1{
+    margin-left: -40%;
+}
+#slide4:checked ~ .s1{
+    margin-left: -60%;
+}
+#slide5:checked ~ .s1{
+    margin-left: -80%;
+}
+
+
+
+
+
+.container_galeria{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #ffffff;
+}
+
+
+.container_galeria h1{
+    font-family: 'Sarala';
+    color: #171717;
+    font-size: 50px;
+    margin: 50px 0px 30px 0px;
+    text-align: center;
+}
+
+.display_galeria{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-bottom: 100px;
+}
+
+.galeria{
+    display: flex;
+    
+}
+
+
+.itemGaleria{
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    overflow: hidden;
+    margin: 5px;
+    box-shadow: 0px 1px 3px #ea6f7b56;
+}
+
+.itemGaleria img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+    
+}
+
+
+
+.container_contatos{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #171717;
+    align-items: center;
+}
+
+.container_contatos h1{
+    font-family: 'Sarala';
+    color: #ffffff;
+    font-size: 50px;
+    margin: 50px 0px 30px 0px;
+    text-align: center;
+}
+.container_contatos h2{
+    font-family: 'Sarala';
+    color: #ffffff;
+    font-size: 40px;
+    margin: 50px 0px 30px 0px;
+    text-align: center;
+}
+
+
+.bg_contato{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-image: url(../img/contato2.png);
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+    height: 700px;
+}
+.container_formulario{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    
+}
+
+
+
+.container_formulario form{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.inputs_nome_email{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.itensInput{
+    width: 400px;
+    padding: 10px;
+    border-radius: 3px;
+    border: 1px solid #ea6f7b;
+    outline: none;
+    font-family: 'Poppins';
+    font-size: 14px;
+    font-weight: 500;
+    margin: 10px;
+    color: #F6F6F6;
+    background-color: #171717ad;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.383);
+    transition: 0.3s all ease;
+}
+
+.itensInput:focus{
+    transform: scale(1.05);
+    outline: 2px solid #ea6f7b;
+}
+
+
+
+.container_formulario #assunto{
+    padding: 10px;
+    border-radius: 3px;
+    border: 1px solid #ea6f7b;
+    outline: none;
+    font-family: 'Poppins';
+    font-size: 14px;
+    font-weight: 500;
+    margin: 10px;
+    color: #F6F6F6;
+    background-color: #171717ad;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.383);
+    transition: 0.3s all ease;
+}
+.container_formulario #assunto:focus{
+    outline: 2px solid #ea6f7b;
+    transform: scale(1.05);
+}
+
+.container_formulario #menssagem{
+    padding: 10px;
+    border-radius: 3px;
+    border: 1px solid #ea6f7b;
+    outline: none;
+    font-family: 'Poppins';
+    font-size: 14px;
+    font-weight: 500;
+    margin: 10px;
+    color: #F6F6F6;
+    background-color: #171717ad;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.383);
+    transition: 0.3s all ease;
+}
+.container_formulario #menssagem:focus{
+    outline: 2px solid #ea6f7b;
+}
+
+.container_formulario button{
+    margin: 10px;
+    padding: 10px;
+    background-color: #F6F6F6;
+    border: none;
+    font-family: 'Sarala';
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s all ease;
+}
+.container_formulario button:hover{
+    background-color: #ea6f7b;
+    
+}
+
+.contatos_container{
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+    background-color: white;
+}
+
+
+
+.itens_contato{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    background-color: #000000;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.383);
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    height: 300px;
+    margin: 20px;
+   
+}
+
+
+
+.itens_contato h3{
+    font-family: 'Sarala';
+    font-size: 20px;
+    margin-top: 10px;
+    color: #F6F6F6;
+
+}
+
+.contatos_icones{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.contato{
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    background-color: #F6F6F6;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.3s all ease;
+}
+
+.contato:hover{
+    transform: scale(1.05);
+    background-color: #ea6f7b;
+}
+
+.contato a{
+    text-decoration: none;
+    font-size: 30px;
+    color: #171717;
+}
+
+.endereco{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.endereco h2{
+    color: #171717;
+    font-family: 'Sarala';
+    font-size: 30px;
+    margin-top: 10px;
+}
+.endereco p{
+    color: #171717;
+    font-family: 'Sarala';
+    font-size: 16px;
+}
+
+.endereco h3{
+    color: #171717;
+    font-family: 'Sarala';
+    font-size: 20px;
+    margin-top: 10px;
+}
+.endereco h4{
+    color: #171717;
+    font-family: 'Sarala';
+    font-size: 17px;
+    margin-top: 10px;
+}
+
+.agendamentos_btns{
+    display: flex;
+    justify-content: center;
+}
+
+.agendamentos_btns p{
+    text-decoration: none;
+    font-family: 'Poppins';
+    margin-top: 30px;
+    color: #171717;
+    
+}
+.agendamentos_btns a{
+    text-decoration: none;
+    font-family: 'Poppins';
+    margin: 20px;
+    color: #171717;
+    background-color: #ea6f7b;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: 500;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.674);
+    transition: 0.3s all;
+}
+
+.agendamentos_btns a:hover{
+    background-color: #171717;
+    color: #ea6f7b;
+}
+
+
+
+.container_resdesSociais{
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+
+
+.redes_sociais{
+    width: 90px;
+    height: 90px;
+    background-color: #F6F6F6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    border-radius: 50%;
+    padding: 10px;
+    transition: 0.3s all ease;
+}
+
+.redes_sociais:hover{
+    transform: scale(1.3);
+    background-color: #ea6f7b;
+}
+
+.redes_sociais a{
+    text-decoration: none;
+    color: #171717;
+    font-size: 50px;
+}
+
+.endereco{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.endereco h2{
+    color: #171717;
+    font-family: 'Sarala';
+    font-size: 20px;
+    margin-top: 10px;
+}
+.endereco p{
+    color: #171717;
+    font-family: 'Sarala';
+    font-size: 16px;
+}
+
+.endereco h3{
+    color: #171717;
+    font-family: 'Sarala';
+    font-size: 20px;
+    margin-top: 10px;
+}
+.endereco h4{
+    color: #171717;
+    font-family: 'Sarala';
+    font-size: 17px;
+    margin-top: 10px;
+}
+
+.agendamentos_btns{
+    display: flex;
+    justify-content: center;
+}
+
+.agendamentos_btns p{
+    text-decoration: none;
+    font-family: 'Poppins';
+    margin-top: 30px;
+    color: #171717;
+    
+}
+.agendamentos_btns a{
+    text-decoration: none;
+    font-family: 'Poppins';
+    margin: 20px;
+    color: #171717;
+    background-color: #ea6f7b;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: 500;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.674);
+    transition: 0.3s all;
+}
+
+.agendamentos_btns a:hover{
+    background-color: #171717;
+    color: #ea6f7b;
+}
+
+.container_mapa{
+    width: 100%;
+    height: 500px;
+    margin-bottom: 300px;
+}

@@ -1,0 +1,600 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'agendamento/css/agendamento.css' %}">
+    <script src="https://kit.fontawesome.com/dc37c7fe1c.js" crossorigin="anonymous"></script>
+    <title>Agendamento STUDIO RAMOSS</title>
+</head>
+<body>
+    {% include "nav.html" %}
+    <main onmouseover="menos()">
+        <section class="informacoes_makes">
+            <div class="menu_makes">
+                
+                <!-- <img src="{% static 'agendamento/img/makes.jpg'%}" alt=""> -->
+                <video autoplay muted loop>
+                    <source src="{% static 'agendamento/videos/video.webm' %}"> 
+                </video>
+                <h1>MENU DE MAKES</h1>
+                <p>Escolha o estilo de make perfeita para você</p>
+            </div>
+            <div class="experiancias">
+                <h1>EXPERIÊNCIAS</h1>
+                <div class="container_exp">
+                    <img src="{% static 'app_site/img/img_makes/maquiagem_natural.png'%}" alt="">
+                    <img src="{% static 'app_site/img/img_paula/fantasias_paula3.jpg'%}" alt="">
+                    <img src="{% static 'app_site/img/img_makes/maquiagem_festa1.png'%}" alt="">
+                    <img src="{% static 'app_site/img/img_paula/paula4.jpg'%}" alt="">
+                    <img src="{% static 'app_site/img/img_makes/maquiagem_sociais.png'%}" alt="">
+                    <img src="{% static 'app_site/img/img_makes/maquiagem_formatura.png'%}" alt="">
+                    <img src="{% static 'app_site/img/img_paula/fantasias_paula2.jpg'%}" alt="">
+                </div>
+                
+            </div>
+
+        </section>
+
+        <section class="agendamento">
+            <div class="escolhas_agendamento" >
+                <div class="buttons_agendamento">
+                    <a href="https://wa.me/+55+ddd+numero" target="_blank">Atendimento Domiciliar</a>
+                </div>
+                <h1>1. Escolha a Make </h1>
+                <label for="">Makes</label>
+                <select name="tipo_make" onclick="verificaMake()" id="tipo_make">
+                    <option selected disabled id="makes" class="opcoes_make" value="">Menu de MAKES</option>
+                    <option class="opcoes_make" id="make1" value="make1">Maquiagem Natural</option>
+                    <option class="opcoes_make" id="make2" value="make2">Maquiagem Colorida</option>
+                    <option class="opcoes_make" id="make3" value="make3">Maquiagem para Festas</option>
+                    <option class="opcoes_make" id="make4" value="make4">Maquiagem Glan</option>
+                    <option class="opcoes_make" id="make5" value="make5">Maquiagem Artistica</option>
+                    <option class="opcoes_make" id="make6" value="make6">Maquiagens para Casamento</option>
+                    <option class="opcoes_make" id="make7" value="make7">Maquiagem para Eventos Sociais</option>
+                </select>
+                <span id="msg_escolha-Make">*É necessário preencher este campo!</span>
+                <label for="">Experiências Extras</label>
+                <select name="" id="tipo_extra"  required>
+                    <option selected disabled class="opcoes_make" value="">Escolha um Extra GRÁTIS</option>
+                    <option class="opcoes_make" value="extra0">Não quero um extra</option>
+                    <option class="opcoes_make" value="extra1">Limpeza de Sobrancelha</option>
+                    <option class="opcoes_make" value="extra2">Aplicação de Cílios Postiços</option>
+                    <option class="opcoes_make" value="extra3">Manicure</option>
+                    
+                </select>
+
+                <div class="contem_preco">
+                    <p id="p_valor"> O valor da Make tem um valor minímo de R$ 50,00 deverá ser paga presencialmente na loja.</p>
+                </div>
+
+            </div>
+            <div class="escolhas_agendamento" >
+                <h1>2. AGENDAMENTO</h1>
+               
+                <label for="">Escolha a data.
+                    <span id="msg_data">*É necessário preencher este campo!</span>
+                    <!-- <button  name="data" id="escolha_data" required  value="" onclick="dataDisponivel()"></button> -->
+                    <input type="date" max="2023-12-29" min="{{ data }}" name="data" id="escolha_data" required> 
+                    
+                    <label for="">escolha um Horário</label>
+                    <select name="" onclick="horarioData()" id="hora_atendimento"  required>
+                        <option selected disabled class="escolha_horario" value="">Selecine um Horário</option>
+                        <option class="escolha_horario" value="09:00">atendimento das 09:00 </option>
+                        <option class="escolha_horario" value="10:00">atendimento das 10:00 </option>
+                        <option class="escolha_horario" value="11:00">atendimento das 11:00 </option>
+                        <option class="escolha_horario" value="13:00">atendimento das 13:00 </option>
+                        <option class="escolha_horario" value="14:00">atendimento das 14:00 </option>
+                        <option class="escolha_horario" value="15:00">atendimento das 15:00 </option>
+                        <option class="escolha_horario" value="16:00">atendimento das 16:00 </option>
+                        <option class="escolha_horario" value="17:00">atendimento das 17:00 </option>
+                        <option class="escolha_horario" value="18:00">atendimento das 18:00 </option>
+                        <option class="escolha_horario" value="19:00">atendimento das 19:00 </option>
+                        <option class="escolha_horario" value="20:00">atendimento das 20:00 </option>
+                        
+                        
+                    </select>
+                    <span id="msg_hora">*É necessário preencher este campo!</span>
+                </label>
+                <div class="contem_preco">
+                    <p id="p_horario">Atenção! O Horário de atendimento é das 9:00 às 20:00 horas</p>
+                </div>
+                
+            </div>
+
+            <div class="escolhas_agendamento" >
+                <h1>3. Escolha a Loja</h1>
+                <label for="">Escolha uma loja pertinho de você.</label>
+                <select name="" id="escolha_loja" onclick="verificaLoja()" required>
+                    <option selected disabled class="opcoes_make" value="">Loja selecionada</option>
+                    <option class="opcoes_make"  value="loja1">Loja 1</option>
+                    <option class="opcoes_make"  value="loja2">Loja 2</option>
+                </select>
+                <span id="msg_loja">*É necessário preencher este campo!</span>
+                <div id="local_loja" class="contem_preco">
+                    <p id="p_local">O local da loja selecionada aparecerá aqui.</p>
+                </div>
+            </div>
+
+            
+            <div class="concluir_agendamento">
+                <div class="confirmacao">
+                    <input type="checkbox" id="aceitar_termos_email" required>
+                    <p>Desejo finalizar o meu agendamento e receber dados por Email.</p>
+                </div>
+                <div class="confirmacao">
+                    <input type="checkbox" id="aceitar_termos" required>
+                    <p>Aceito os <a href="">Termos de Uso</a> e <a href="">Política de Privacidade</a>.</p> 
+                    
+                    
+                </div>
+                <span id="msg_checked">*É necessário aceitar todos os termos!</span>
+                <p>Ao clicar em CONCLUIR AGENDAMENTO você concorda com nossos <a href="">Termos de Uso</a>. Todos dados coletados serão tratado de acordo com nossa <a href="">Política de Privacidade</a>.</p>
+                
+                <input type="submit" value="CONCLUIR AGENDAMENTO " onclick="btn_agendar()" id="btn_concluir_agendamento">
+            </div>
+            <section class="alert_mensage">
+        
+            </section>
+        </section>
+        <section id="confirmar_agendamento">
+            <div class="forms">
+                <h1>ATENÇÃO</h1>
+                <H2>Verifique seus dados !!!</H2>
+               
+                <div class="btn_confirmar_agendamento">
+                    
+                    <form action="{% url 'agendamento' %}" method="post">
+                        {% csrf_token %}
+                        <div class="confirmarEscolhas">
+                            <label for="">Maquiagem Escolhida:
+                                
+                            </label>
+                            <div id="make_selecionada"  class="divis_valores"></div>
+                            <input type="text" value="" id="confi_make" name="confi_make">
+                            <label for="">Extra Grátis:
+                                
+                            </label>
+                            <div id="extra_selecionado" class="divis_valores"></div>
+                            <input type="text"  value="" id="confi_extra" name="confi_extra">
+                            <label for="">Data e Horário do Atendimento:
+                                
+                            </label>
+                            <div id="data_hora_selecionada" class="divis_valores"></div>
+                            <input type="text"  value="" id="confi_data" name="confi_data">
+
+                            <label for="">Local do Atendimento:
+                                
+                            </label>
+                            <div id="local_selecionado" class="divis_valores"></div>
+                            <input type="text"  value="" id="confi_loja" name="confi_loja">
+                            
+                            <label for="">Valor Total
+                                
+                            </label>
+                            <input type="text"  value="" id="total" spellcheck="true" name="total">
+                            <div id="total_preco" class="divis_valores"></div>
+                            
+                            
+                    
+                            
+                        </div>
+                        <div class="butons">
+                            
+                            <a onclick="btn_cancelar()" id="btn_cancelar">Cancelar</a>
+                            <button type="submit" onclick="confirmar_agendamento()" id="btn_confirmar">CONFIRMAR </button>
+                        </div>
+                    </form>
+                    
+                </div>
+                
+            </div>
+            <section class="alert">
+        
+            </section>
+        </section>
+        <section class="loading">
+            <div class="container_loader"></div>
+        </section>
+    </main>
+    {% include "footer.html" %}
+</body>
+    <script>
+
+        function dataDisponivel(){
+            csrf_token = document.querySelector('[name=csrfmiddlewaretoken]').value
+            data_id = 'disponivel'
+            data = new FormData()
+            data.append('data_id', data_id)
+
+            fetch("/agendamento/verDatas/", {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': csrf_token,
+                },
+                body: data
+
+            }).then(function(result){
+                return result.json()
+            }).then(function(data){
+                
+                datas = data['datas_disponiveis']
+                horarios = data['horarios_agendados']
+            
+                
+            
+            
+            
+            
+            })
+        }
+
+        function menos(){
+            let t = document.querySelector('.container_mais');
+            t.style.display = 'none';
+
+    }
+
+    function btn_agendar(){
+        let escolhaMake = document.querySelector('#tipo_make');
+        let valorMake = escolhaMake.options[escolhaMake.selectedIndex];
+        let make = valorMake.value;
+
+
+        let escolhaExtra = document.querySelector("#tipo_extra");
+        let valorExtra = escolhaExtra.options[escolhaExtra.selectedIndex];
+        let extra = valorExtra.value;
+
+        let dataAgendamento = document.querySelector('#escolha_data').value;
+        let horarioAgendamento = document.querySelector('#hora_atendimento').value;
+
+        let escolhaLoja = document.querySelector('#escolha_loja');
+        let valorLoja = escolhaLoja.options[escolhaLoja.selectedIndex];
+        let loja = valorLoja.value;
+
+
+        let termo1 = document.querySelector('#aceitar_termos_email');
+
+        let termo2 = document.querySelector('#aceitar_termos');
+
+
+        
+
+        if (termo1.checked && termo2.checked){
+            document.getElementById('msg_checked').style.display= "none";
+            if (make == ''){
+                document.getElementById('msg_escolha-Make').style.display= "block"
+                
+                menssagem('escolha a MAQUIAGEM')
+            }else if(dataAgendamento == ''){
+                document.getElementById('msg_data').style.display= "block"
+                document.getElementById('msg_escolha-Make').style.display= "none"
+                menssagem('escolha a DATA DE ATENDIMENTO')
+            }else if(horarioAgendamento == ''){
+                document.getElementById('msg_hora').style.display= "block"
+                document.getElementById('msg_escolha-Make').style.display= "none"
+                document.getElementById('msg_data').style.display= "none"
+                menssagem('esolha o HORÁRIO DE ATENDIMENTO')
+            
+            }else if(loja == ''){
+                document.getElementById('msg_loja').style.display= "block"
+                document.getElementById('msg_escolha-Make').style.display= "none"
+                document.getElementById('msg_data').style.display= "none"
+                menssagem('escolha o LOCAL DE ATENDIMENTO')
+            
+            
+            }else{
+                let confirmarAgendamento = document.getElementById('confirmar_agendamento').style.display = 'flex'
+
+                
+                
+                if (make == 'make1'){
+                    let confiMake = document.querySelector('#make_selecionada');
+                    let makeValor = document.querySelector('#confi_make')
+                    makeValor.value = 'MAQUIAGEM NATURAL'
+                    confiMake.innerHTML = 'MAQUIAGEM NATURAL';
+                    
+                }else if(make == 'make2'){
+                    let confiMake = document.querySelector('#make_selecionada');
+                    let makeValor = document.querySelector('#confi_make')
+                    makeValor.value = 'MAQUIAGEM COLORIDA'
+                    confiMake.innerHTML = 'MAQUIAGEM COLORIDA';
+                    
+                }else if(make == 'make3'){
+                    let confiMake = document.querySelector('#make_selecionada');
+                    let makeValor = document.querySelector('#confi_make')
+                    makeValor.value = 'MAQUIAGEM PARA FESTA'
+                    confiMake.innerHTML = 'MAQUIAGEM PARA FESTA';
+                    
+                }else if(make == 'make4'){
+                    let confiMake = document.querySelector('#make_selecionada');
+                    let makeValor = document.querySelector('#confi_make')
+                    makeValor.value = 'MAQUIAGEM GLAN'
+                    confiMake.innerHTML = 'MAQUIAGEM GLAN';
+                    
+                
+                    
+                }else if(make == 'make5'){
+                    let confiMake = document.querySelector('#make_selecionada');
+                    let makeValor = document.querySelector('#confi_make')
+                    makeValor.value = 'MAQUIAGEM ARTISTICA'
+                    confiMake.innerHTML = 'MAQUIAGEM ARTISTICA';
+                    
+                }else if(make == 'make6'){
+                    let confiMake = document.querySelector('#make_selecionada');
+                    let makeValor = document.querySelector('#confi_make')
+                    makeValor.value = 'MAQUIAGEM PARA CASAMENTO'
+                    confiMake.innerHTML = 'MAQUIAGEM PARA CASAMENTO';
+                   
+                
+                }else if(make == 'make7'){
+                    let confiMake = document.querySelector('#make_selecionada');
+                    let makeValor = document.querySelector('#confi_make')
+                    makeValor.value = 'MAQUIAGEM PARA EVENTOS SOCIAIS'
+                    confiMake.innerHTML = 'MAQUIAGEM PARA EVENTOS SOCIAIS';
+                    
+                }
+                if (extra == 'extra1'){
+                    let confiExtra = document.querySelector('#extra_selecionado');
+                    let extraValor = document.querySelector('#confi_extra');
+                    extraValor.value = 'LIMPEZA DE SOBRANCELHA';
+                    confiExtra.innerHTML = 'LIMPEZA DE SOBRANCELHA';
+                    
+                }else if (extra == 'extra2'){
+                    let confiExtra = document.querySelector('#extra_selecionado');
+                    let extraValor = document.querySelector('#confi_extra');
+                    extraValor.value = 'CÍLIOS POSTIÇOS';
+                    confiExtra.innerHTML = 'CÍLIOS POSTIÇOS';
+                    
+                }else if (extra == 'extra3'){
+                    let confiExtra = document.querySelector('#extra_selecionado');
+                    let extraValor = document.querySelector('#confi_extra');
+                    extraValor.value = 'MANICURE';
+                    confiExtra.innerHTML = 'MANICURE';
+                    
+                }else{
+                    let confiExtra = document.querySelector('#extra_selecionado');
+                    let extraValor = document.querySelector('#confi_extra');
+                    extraValor.value = 'NÃO SELECIONADO';
+                    confiExtra.innerHTML = 'NÃO SELECIONADO';
+                }
+                let textoLocal1 = ["Loja1 Rua taltal, Bairro Tal, Bloco TAl TAL ", "Loja2 Rua taltal, Bairro Tal, Bloco TAl TAL "]
+                let escolhaLoja = document.querySelector('#escolha_loja');
+                let valorLoja = escolhaLoja.options[escolhaLoja.selectedIndex];
+                let lojaLocal = valorLoja.value; 
+                if (lojaLocal == 'loja1'){
+                    let confiLoja = document.querySelector('#local_selecionado');
+                    let localValor= document.querySelector('#confi_loja');
+                    localValor.value = `${textoLocal1[0]}`
+                    confiLoja.innerHTML = `${textoLocal1[0]}`;
+                    
+                }else if(lojaLocal == 'loja2'){
+                    let confiLoja = document.querySelector('#local_selecionado');
+                    let localValor= document.querySelector('#confi_loja');
+                    localValor.value = `${textoLocal1[1]}`
+                    confiLoja.innerHTML = `${textoLocal1[1]}`;
+                }
+                let listaPreco = ['50,00','70,00','85,00','100,00','120,00','150,00']
+                if (make == 'make1'){
+                    let total = document.querySelector('#total_preco');
+                    let totalValor = document.querySelector('#total');
+                    totalValor.value = `R$: ${listaPreco[0]}`
+                    total.innerHTML= `R$: ${listaPreco[0]}` 
+                }else if (make == 'make2'){
+                    let total = document.querySelector('#total_preco');
+                    let totalValor = document.querySelector('#total');
+                    totalValor.value = `R$: ${listaPreco[1]}`
+                    total.innerHTML= `R$: ${listaPreco[1]}` 
+                }else if (make == 'make3'){
+                    let total = document.querySelector('#total_preco');
+                    let totalValor = document.querySelector('#total');
+                    totalValor.value = `R$: ${listaPreco[2]}`
+                    total.innerHTML= `R$:${listaPreco[2]}` 
+                }else if (make == 'make4'){
+                    let total = document.querySelector('#total_preco');
+                    let totalValor = document.querySelector('#total');
+                    totalValor.value = `R$: ${listaPreco[3]}`
+                    total.innerHTML= `R$: ${listaPreco[3]}` 
+                }else if (make == 'make5'){
+                    let total = document.querySelector('#total_preco');
+                    let totalValor = document.querySelector('#total');
+                    totalValor.value = `R$: ${listaPreco[4]}`
+                    total.innerHTML= `R$: ${listaPreco[4]}` 
+                }else if (make == 'make6'){
+                    let total = document.querySelector('#total_preco');
+                    let totalValor = document.querySelector('#total');
+                    totalValor.value = `R$: ${listaPreco[5]}`
+                    total.innerHTML= `R$: ${listaPreco[5]}` 
+                }else if (make == 'make7'){
+                    let total = document.querySelector('#total_preco');
+                    let totalValor = document.querySelector('#total');
+                    totalValor.value = `R$: ${listaPreco[3]}`
+                    total.innerHTML= `R$: ${listaPreco[3]}` 
+                }else if (make == 'make8'){
+                    let total = document.querySelector('#total_preco');
+                    let totalValor = document.querySelector('#total');
+                    totalValor.value = `R$: ${listaPreco[3]}`
+                    total.innerHTML= `R$: ${listaPreco[3]}` 
+                }
+
+                
+                let horarioMake = document.querySelector('#hora_atendimento');
+                let horaData = horarioMake.options[horarioMake.selectedIndex];
+                let horaAtendimento = horaData.value;
+
+                let confiData = document.querySelector('#data_hora_selecionada');
+                let data_horaValor = document.querySelector('#confi_data');
+                let data = dataAgendamento.split('-')
+                data_horaValor.value = `${data[2]}/${data[1]}/${data[0]} às ${horaAtendimento}`;
+                confiData.innerHTML = `${data[2]}/${data[1]}/${data[0]} às ${horaAtendimento}`;
+                
+
+
+            }
+
+        }else{
+            
+            document.getElementById('msg_checked').style.display= "block";
+        }
+        
+
+    }
+
+    function horarioData(){
+        let horarioMake = document.querySelector('#hora_atendimento');
+        let horaData = horarioMake.options[horarioMake.selectedIndex];
+        let horaAtendimento = horaData.value;
+
+        let dataAgendamentoHorario = document.querySelector('#escolha_data').value;
+        let data = dataAgendamentoHorario.split('-')
+        let p_horario = document.querySelector('#p_horario')
+        let listaHorario = [`Seu atendimento será no dia ${data[2]}/${data[1]}/${data[0]}, no horário das ${horarioMake.value} horas.`]
+        if(dataAgendamentoHorario == ''){
+            document.getElementById('msg_data').style.display= "block"
+            document.getElementById('msg_escolha-Make').style.display= "none"
+            alert('Escolha a data do atendimento !!')
+        }else if (horaAtendimento == '09:00'){
+            p_horario.innerHTML = listaHorario[0]
+            document.getElementById('msg_data').style.display= "none"
+        }else if (horaAtendimento == '10:00'){
+            p_horario.innerHTML = listaHorario[0]
+            document.getElementById('msg_data').style.display= "none"
+        }else if (horaAtendimento == '11:00'){
+            p_horario.innerHTML = listaHorario[0]
+            document.getElementById('msg_data').style.display= "none"
+        }else if (horaAtendimento == '13:00'){
+            p_horario.innerHTML = listaHorario[0]
+            document.getElementById('msg_data').style.display= "none"
+        }else if (horaAtendimento == '14:00'){
+            p_horario.innerHTML = listaHorario[0]
+            document.getElementById('msg_data').style.display= "none"
+        }else if (horaAtendimento == '15:00'){
+            p_horario.innerHTML = listaHorario[0]
+            document.getElementById('msg_data').style.display= "none"
+        }else if (horaAtendimento == '16:00'){
+            p_horario.innerHTML = listaHorario[0]
+            document.getElementById('msg_data').style.display= "none"
+        }else if (horaAtendimento == '17:00'){
+            p_horario.innerHTML = listaHorario[0]
+            document.getElementById('msg_data').style.display= "none"
+        }else if (horaAtendimento == '18:00'){
+            p_horario.innerHTML = listaHorario[0]
+            document.getElementById('msg_data').style.display= "none"
+        }else if (horaAtendimento == '19:00'){
+            p_horario.innerHTML = listaHorario[0]
+            document.getElementById('msg_data').style.display= "none"
+        }else if (horaAtendimento == '20:00'){
+            p_horario.innerHTML = listaHorario[0]
+            document.getElementById('msg_data').style.display= "none"
+        }else{
+            p_horario.innerHTML = 'Atenção! O Horário de atendimento é das 9:00 às 20:00 horas'
+        }
+    }
+    
+    function verificaMake(){
+        let escolhaMake = document.querySelector('#tipo_make');
+        let valorMake = escolhaMake.options[escolhaMake.selectedIndex];
+        let make = valorMake.value;
+
+
+        let p_valor = document.querySelector('#p_valor')
+
+        let textValor = ["O valor da Maquiagem Natural é de R$ 50,00 mais uma Experiência Extra GRÁTIS!", "O valor da Maquiagem Colorida é de R$ 70,00 mais uma Experiência Extra GRÁTIS!", "O valor da Maquiagem para Festas é de R$ 85,00 mais uma Experiência Extra GRÁTIS!", "O valor da Maquiagem Glan é de R$ 100,00 mais uma Experiência Extra GRÁTIS!",  "O valor da Maquiagem Artistica é de R$ 120,00 mais uma Experiência Extra GRÁTIS!", "O valor da Maquiagens para Casamento é de R$ 150,00 mais uma Experiência Extra GRÁTIS!", "O valor da Maquiagem para Eventos Sociais é de R$ 100,00 mais uma Experiência Extra GRÁTIS!"]
+
+        if (make == 'make1'){
+            p_valor.innerHTML = textValor[0]
+        }
+        else if (make == 'make2'){
+            p_valor.innerHTML = textValor[1]
+        }
+        else if (make == 'make3'){
+            p_valor.innerHTML = textValor[2]
+        }
+        else if (make == 'make4'){
+            p_valor.innerHTML = textValor[3]
+        }
+        else if (make == 'make5'){
+            p_valor.innerHTML = textValor[4]
+        }
+        else if (make == 'make6'){
+            p_valor.innerHTML = textValor[5]
+        }
+        else if (make == 'make7'){
+            p_valor.innerHTML = textValor[6]
+        
+        
+        }else{
+            p_valor.innerHTML = 'O valor da Make tem um valor minímo de R$ 50,00 deverá ser paga presencialmente na loja'
+                
+        }
+
+    }
+
+
+    function verificaLoja(){
+
+        let p = document.getElementById('p_local')
+
+        let textoLocal = ["Loja1 Rua taltal, Bairro Tal, Bloco TAl TAL ", "Loja2 Rua taltal, Bairro Tal, Bloco TAl TAL "]
+
+        let escolhaLoja = document.querySelector('#escolha_loja');
+        let valorLoja = escolhaLoja.options[escolhaLoja.selectedIndex];
+        let loja = valorLoja.value; 
+
+        if (loja == 'loja1'){
+            
+            p.innerHTML = textoLocal[0]
+        }else if(loja == 'loja2'){
+            p.innerHTML = textoLocal[1]
+        }
+    }
+
+    
+    function confirmar_agendamento(){
+        
+        let loading = document.querySelector('.loading');
+        loading.style.display = 'flex';
+
+        const divMenssage = document.querySelector('.alert')
+        const msg = 'Agendamento confirmado, enviaremos um email com todas as informações, verifique-o!!'
+
+        const message = document.createElement('div');
+        message.classList.add("menssagem");
+        message.innerText = msg;
+
+        divMenssage.appendChild(message);
+        message.style.display = 'flex';
+        setTimeout(()=>{
+            message.style.display = 'none';
+            divMenssage.style.display = 'none';
+        },10000)
+    }
+    function menssagem(menssagem){
+
+
+        const divMenssage = document.querySelector('.alert_mensage')
+        const msg = 'Atenção ' + menssagem
+
+        const message = document.createElement('div');
+        message.classList.add("menssagem2");
+        message.innerText = msg;
+
+        divMenssage.appendChild(message);
+        message.style.display = 'flex';
+        setTimeout(()=>{
+            message.style.display = 'none';
+            divMenssage.style.display = 'none';
+        },5000)
+    }
+
+    
+
+    
+    function btn_cancelar(){
+        let confirmarAgendamento = document.getElementById('confirmar_agendamento').style.display = 'none'
+    }
+
+    
+    </script>
+</html>

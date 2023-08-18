@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800;900&family=Sarala:wght@400;700&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;    
+}
+
+header{
+    display: flex;
+    justify-content: flex-end;
+    border-bottom: none;
+    padding: 20px;
+    background-color: #171717ca;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.319);
+}
+
+.container_menu_bar{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 100px;
+}
+
+
+.container_menu_bar a{
+    text-decoration: none;
+    margin: 10px 20px;
+    font-family: 'Sarala';
+    font-size: 15px;
+    font-weight: 500;
+    color: #F6F6F6;
+    text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.217);
+    transition: 0.4s all ease;
+}
+
+.container_menu_bar a:hover{
+    color: #ea6f7b;
+}
+
+.container_nav{
+    position: absolute;
+    left: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#logo{
+    width: 60px;
+    height: 60px;
+    position: relative;
+    padding: 5px;
+}
+
+#btn_mais{
+    background-color: transparent;
+    border: none;
+    font-family: 'Sarala';
+    margin: 0px 20px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #F6F6F6;
+    text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.217);
+    transition: 0.4s all ease;
+    cursor: pointer;
+}
+.container_mais{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 60px;
+    padding: 10px;
+    background-color: #171717ad;
+    align-items: center;
+}
+
+.item_nav_mais{
+    width: 100%;
+    display: flex;
+    border-top: 2px solid rgba(29, 29, 29, 0.18);
+    align-items: center;
+}
+
+.itemNav1{
+    border-top: none;
+}
+
+.item_nav_mais a{
+    display: flex;
+    align-items: center;
+    color: #F6F6F6;
+    transition: 0.3s all ease;
+}
+.item_nav_mais a:hover{
+    
+    color: #ea6f7b;
+}
+
+.item_nav_mais h3{
+    font-size: 14px;
+    margin-left: 10px;
+}
+.icones{
+    font-size: 20px;
+}
+
+#perfil{
+    font-size: 20px;
+
+}
+
+
+#pg_home{
+    color: #ea6f7b;
+    font-weight: 600;
+}
+
+.contatos_nav{
+    position: absolute;
+    right: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icones_nav_contato a{
+    font-size: 20px;
+    margin: 10px;
+}

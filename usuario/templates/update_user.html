@@ -1,0 +1,61 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'usuario/css/update_user.css' %}">
+    <script src="https://kit.fontawesome.com/dc37c7fe1c.js" crossorigin="anonymous"></script>
+    <title>Mudar Informações</title>
+</head>
+<body onload="popoup()">
+    <main>
+        <h1>MUDANÇA DE INFORMAÇÕES</h1>
+        <div class="menssagem">
+
+        </div>
+        <form action="{% url 'update_user' id %}" method="post">{% csrf_token %}
+            <input type="text" name="nome" id="nome" value="{{usuario.nome}}" disabled>
+            <input type="text" name="email" id="email" value="{{usuario.email}}" disabled>
+            <input type="password" name="senha" id="senha" value="xxxxxxxx" disabled>
+            <input type="text" name="codigo" id="codigo" placeholder="Insira o código" autocomplete="off" required>
+            <button type="submit">Verificar Email</button>
+        </form>
+        <span>Esse código que enviamos tem um praso de <span id="numero_segundos">30</span> segundos, verifique seu email o mais rápido possível!</span>
+        <div class="container_links">
+            <a href="{% url 'perfil' %}">Voltar</a> 
+            <!-- <a href="" id="enviar_codigo" disabled>Reenviar Código</a> -->
+        </div>
+
+        <section class="alert">
+
+        </section>
+    </main>
+</body>
+<script>
+    
+    const divMenssage = document.querySelector('.alert')
+    const msg = 'Email enviado com sucesso, verifique-o!'
+    const msg2 = 'Prazo para verificação finalizado! reenvie um novo código'
+    function popoup(){
+        const message = document.createElement('div');
+        message.classList.add("menssagem");
+        message.innerText = msg;
+
+        divMenssage.appendChild(message);
+        message.style.display = 'flex';
+        setTimeout(()=>{
+            message.style.display = 'none';
+            divMenssage.style.display = 'none';
+
+            popoup2()
+        },30000)
+    }
+
+    
+    
+</script>
+</html>

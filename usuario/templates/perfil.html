@@ -1,0 +1,277 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'usuario/css/perfil.css' %}">
+    <script src="https://kit.fontawesome.com/dc37c7fe1c.js" crossorigin="anonymous"></script>
+    <title>Perfil - {{ usuario.nome}}</title>
+</head>
+<body>
+
+        {% include "nav_base.html" %}
+   
+    <main onmouseover="menos()">
+        <section class="container_perfil">
+            {% if imagem %}
+            <div class="containerImg" onclick="escolherImgPerfil()">
+                <img src="{{ imagem.img.url}}" alt="" >
+            </div>
+                
+            {% else%}
+                <button onclick="escolherImgPerfil()" id="btn_imgPerfil">
+                    <div class="container_img_perfil">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                </button>
+            {% endif %}
+            <div class="container_titulo">
+                <h1>{{ usuario.nome.title }}</h1>
+                <h2>Email</h2>
+                <p>{{ usuario.email }}</p>
+            </div>
+            <div class="dividContets"></div>
+
+            <div class="informacoes_perfil">
+                
+
+                <div class="container_Links">
+                    <a href="{% url 'agendamento'%}" >Agendamento</a>
+                    <button onclick="contentLinks('1')" id="titulo_maquiagem" class="btn_links">Maquiagens</button>
+                    <button onclick="canlcelContentLinks('1')"  id="titulo_CancelMaquiagem" class="btn_links">Maquiagens</button>
+                    <div class="contentLinks" id="contentMake">
+                        <a href="{% url 'sobremakes' 1 %}">Maquiagem Natural</a>
+                        <a href="{% url 'sobremakes' 2 %}">Maquiagem Colorida</a>
+                        <a href="{% url 'sobremakes' 3 %}">Maquiagem para Festas</a>
+                        <a href="{% url 'sobremakes' 4 %}">Maquiagem Glan</a>
+                        <a href="{% url 'sobremakes' 5 %}">Maquiagem Artistica</a>
+                        <a href="{% url 'sobremakes' 6 %}">Maquiagem para Casamento</a>
+                        <a href="{% url 'sobremakes' 7 %}">Maquiagem para Eventos Sociais</a>
+                    </div>
+                    <a href="{% url 'privacidade'%}" target="_blank" >Politicas de Privacidade</a>
+                    <a href="{% url 'central_atendimento'%}" target="_blank" >Central de Atendimento</a>
+                    <a href="{% url 'central_atendimento'%}" target="_blank" >Código de defesa do Consumidor</a>
+                    <button onclick="contentLinks('2')" class="btn_links" id="titulo_configuracao">Configurações</button>
+                    <button onclick="canlcelContentLinks('2')" class="btn_links" id="titulo_CancelConfiguracao">Configurações</button>
+                    <div class="contentLinks" id="contentConfi"> 
+                        <a href="">Configurações de Menssagens</a>
+                        <a href="{% url 'update_user' 'nome' %}">Configurações de Username</a>
+                        <a href="{% url 'update_user' 'email' %}">Configurações de Email</a>
+                        <a href="{% url 'update_user' 'senha' %}">Configurações de Senha</a>
+                        <a href="">Apagar Conta</a>
+                    </div>
+                </div>
+                <!-- <a href="" onclick="loading()" id="mudar_informacao">Configurações <i class="fa-solid fa-pen-to-square"></i></a> -->
+                
+            </div>
+        </section>
+            
+        
+            <section class="container_agendamentos" id="container_agendamentos">
+                
+                {% if agendamentos %}
+            
+                    <h1>MEUS AGENDAMENTOS</h1>
+                    <table>
+                        <tr>
+                            <div class="th">
+                                <th>Maquiagem</th>
+                                <th>Extra</th>
+                                <th>data</th>
+                                <th>Localização</th>
+                                <th>Valor</th>
+                                <th>Função</th>
+                            </div>
+                            
+                            
+                        </tr>
+                        <br>
+                        {% for make in agendamentos %}
+                        
+                        <tr>
+                            <td>{{ make.maquiagem }}</td>
+                            <td>{{ make.extra }}</td>
+                            <td>{{ make.data_horario }}</td>
+                            <td>{{ make.localizacao }}</td>
+                            {% if make.valor == 'ERRO AO VERIFICAR O VALOR' %}
+                                <td>{{ make.valor }}</td>
+                            {% else %}
+                                <td>{{make.valor }}</td>
+                            {% endif %}
+                            <td><a href="{% url 'cancelar_agendamento' make.id %}" onclick="loading()" class="btn_cancelar_make" id="btn_cancelar_make">Cancelar</a></td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                {% else %}
+                    <h1>Você não possui agendamentos!</h1>
+                    <a href="{% url 'agendamento'%}" id="btn_agendar">Agendar</a>
+                {% endif %}
+            
+                
+            </section>
+        
+        <section class="containerImgPerfil" id="containerImgPerfil" onclick="fecharImgPerfil()">
+            <div class="contentImgPerfil" id="contentImgPerfil">
+                <div class="btn_cancelarImg">
+                    <i onclick="fecharImgPerfil()" class="fa-solid fa-circle-xmark"></i>
+                </div>
+                <h1>IMAGEM DE PERFIL</h1>
+                <div class="contentImg">
+                    <a href="{% url 'img_perfil' 1 %}"><img src="{% static 'app_site/img/img_perfil/img_perfil1.jpg'%}" alt=""></a>
+                    <a href="{% url 'img_perfil' 2 %}"><img src="{% static 'app_site/img/img_perfil/img_perfil2.jpg'%}" alt=""></a>
+                    <a href="{% url 'img_perfil' 3 %}"><img src="{% static 'app_site/img/img_perfil/img_perfil3.jpg'%}" alt=""></a>
+                </div>
+                <div class="contentImg">
+                    <a href="{% url 'img_perfil' 4 %}"><img src="{% static 'app_site/img/img_perfil/img_perfil4.jpg'%}" alt=""></a>
+                    <a href="{% url 'img_perfil' 5 %}"><img src="{% static 'app_site/img/img_perfil/img_perfil5.jpg'%}" alt=""></a>
+                    <a href="{% url 'img_perfil' 6 %}"><img src="{% static 'app_site/img/img_perfil/img_perfil6.jpg'%}" alt=""></a>
+                </div>
+                <h2>ESCOLHA DA GALERIA</h2>
+                <form action="{% url 'foto_perfil' %}" method="post" enctype="multipart/form-data" class="content_fotoPerfil">{% csrf_token %}
+                    <div class="container_file">
+                        <div id="container_input_file">
+                            <label class="picture" id="label" for="input_file_perfil" >
+                                <span class="picture__image"></span>
+                                <p class="texto_foto"><i class="fa-solid fa-image"></i></p>
+                                <input type="file" name="input_file_perfil" id="input_file_perfil" class="input_file_perfil" id="input_file_perfil">
+                            </label>
+                        </div>
+                        <button type="submit">Confirmar</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+        
+        
+        <section class="loading">
+            <div class="container_loader"></div>
+        </section>
+
+    
+    </main>
+    {% include "footer.html" %}
+</body>
+    <script>
+
+    const inputFile = document.querySelector("#input_file_perfil");
+    const pictureimage = document.querySelector(".picture__image"); 
+    const text = document.querySelector(".texto_foto"); 
+
+    // const pictureImageTxt = 'Foto de Perfil';
+    // pictureimage.innerHTML = pictureImageTxt;
+
+
+    inputFile.addEventListener('change', function(e){
+        const inputTarget = e.target;
+        
+
+        const file = inputTarget.files[0];
+        
+
+        if(file){
+            
+            const reader = new FileReader();
+
+            reader.addEventListener('load', function(e){
+                const readerTarget = e.target;
+                
+                const img = document.createElement('img');
+                img.src = readerTarget.result;
+                img.classList.add('imagem_perfil');
+                img.style.width = '100%';
+                text.style.display = 'none'
+                pictureimage.innerHTML = '';
+
+                pictureimage.appendChild(img);
+            })
+
+            reader.readAsDataURL(file);
+
+        }else{
+            pictureimage.innerHTML = pictureImageTxt;
+            
+        }
+    });
+
+
+        function mais(){
+            let t = document.querySelector('.container_mais');
+            
+            t.style.display = 'flex';
+
+        }
+
+        function menos(){
+            let t = document.querySelector('.container_mais');
+            t.style.display = 'none';
+            
+        }
+    
+
+        function loading(){
+            let loading = document.querySelector('.loading');
+            loading.style.display = 'flex';
+        }
+
+
+        function escolherImgPerfil(){
+            content = document.getElementById('containerImgPerfil').style.display = 'flex';
+            desabilitarScroll()
+        }
+        function fecharImgPerfil(){
+            content = document.getElementById('containerImgPerfil').style.display = 'none';
+            habilitarScroll()
+        }
+
+        function desabilitarScroll() {
+            document.body.style.overflow = 'hidden';
+        }
+
+        function habilitarScroll() {
+            document.body.style.overflow = '';
+        }
+
+        function contentLinks(id){
+            contentMake = document.getElementById('contentMake');
+            contentConfi = document.getElementById('contentConfi');
+            titleMake = document.getElementById('titulo_maquiagem');
+            titleMakeCancel = document.getElementById('titulo_CancelMaquiagem');
+            titleConfi = document.getElementById('titulo_configuracao');
+            titleConfiCalcel = document.getElementById('titulo_CancelConfiguracao');
+            if (id == '1'){
+                contentConfi.style.display = 'none'
+                contentMake.style.display = 'flex';
+                titleMake.style.display = 'none';
+                titleMakeCancel.style.display = 'block';
+            }else if(id == '2'){
+                contentMake.style.display = 'none'
+                contentConfi.style.display = 'flex';
+                titleConfi.style.display= 'none';
+                titleConfiCalcel.style.display = 'block';
+            }
+        }
+
+        function canlcelContentLinks(id){
+            contentMake = document.getElementById('contentMake');
+            contentConfi = document.getElementById('contentConfi');
+
+            titleMake = document.getElementById('titulo_maquiagem');
+            titleMakeCancel = document.getElementById('titulo_CancelMaquiagem');
+
+            titleConfiCalcel = document.getElementById('titulo_CancelConfiguracao');
+            titleConfi = document.getElementById('titulo_configuracao');
+            if (id == '1'){
+                contentMake.style.display = 'none';
+                titleMakeCancel.style.display = 'none'
+                titleMake.style.display = 'block'
+            }else if(id == '2'){
+                contentConfi.style.display = 'none';
+                titleConfiCalcel.style.display = 'none';
+                titleConfi.style.display = 'block';
+            }
+        }
+    </script>
+</html>

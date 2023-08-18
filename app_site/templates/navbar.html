@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'app_site/css/navbar.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">
+        <section class="container_menu_bar" onmouseover="menos()">
+            <div class="container_nav">
+                <img src="{% static 'app_site/img/logos/logo2.png'%}" id="logo">
+            </div>
+            <nav class="nav">
+
+                <a href="{% url 'agendamento'%}" id="pg_agendamento" >AGENDAMENTO</a>
+                <a id="pg_home" href="">HOME</a>
+                <a href="#sobre" id="pg_sobre">QUEM SOMOS</a>
+                <a href="#galeria" id="pg_galeria">GALERIA</a>
+        
+                <a href="#contatos" id="pg_contato">CONTATOS</a>
+                <a href="">LOJA ONLINE</a>
+                <!--  -->
+                
+            </nav>
+            <button onmousemove="mais()" id="btn_mais">MAIS
+                <div class="container_mais" style="display: none;" >
+                    <div class="item_nav_mais itemNav1">
+                        <a href="{% url 'perfil'%}" id="perfil"><i class="fa-solid fa-user icones"></i> <h3>Perfil</h3></a>
+                        
+                    </div>
+                    <div class="item_nav_mais">
+                        <a href="" ><i class="fa-solid fa-user-tie"></i> <h3>Trabalhe Conosco</h3></a>
+                        
+                    </div>
+                    <div class="item_nav_mais">
+                        <a href="" ><i class="fa-solid fa-handshake"></i> <h3>Seja um Parceiro</h3></a>
+                        
+                    </div>
+                    <div class="item_nav_mais">
+                        <a href="" target="_blank" title="Dúvidas?"><i class="fa-solid fa-question icones"></i> <h3>Dúvidas</h3></a>
+                        
+                    </div>
+                    <div class="item_nav_mais">
+                        <a href="{% url 'logout' %}" title="SAIR" ><i class="fa-sharp fa-solid fa-circle-xmark icones"></i> <h3>Sair</h3></a>
+                        
+                    </div>
+            
+                </div>
+            </button>
+            
+            <div class="contatos_nav">
+                <div class="icones_nav_contato">
+                    <a href="https://wa.me/+55+ddd+numero" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+                <div class="icones_nav_contato">
+                    <a href="" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+                <div class="icones_nav_contato">
+                    <a href="" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+            </div>
+        </section>
+        
+        
+    </header>
+
+</body>
+    <script>
+        function mais(){
+        let t = document.querySelector('.container_mais');
+        t.style.display = 'flex';
+
+    }
+        function menos(){
+            let t = document.querySelector('.container_mais');
+            t.style.display = 'none';
+
+    }
+    </script>
+</html>

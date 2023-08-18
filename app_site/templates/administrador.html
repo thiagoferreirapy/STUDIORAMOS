@@ -1,0 +1,32 @@
+<form action="{% url 'administrador' %}" method="post" enctype="multipart/form-data">{% csrf_token %}
+    
+    cadastre fotos maquiagens
+    <input type="file" name="img_make" id="img_make">
+    <input type="number" name="id_make" id="id_make">
+    <button type="submit">Cadastrar</button>
+</form>
+
+<form action="{% url 'cadastrar_make' %}" method="post" enctype="multipart/form-data">{% csrf_token %}
+    
+    cadastre fotos maquiagens
+    <input type="text" name="nome" id="nome">
+    <input type="text" name="valor">
+    <button type="submit">Cadastrar</button>
+</form>
+
+
+<form action="{% url 'register' %}" method="post" enctype="multipart/form-data">{% csrf_token %}
+    <input type="file" name="img_perfil" id="img_perfil">
+    <input type="text" name="nome">
+    <input type="text" name="email">
+    <input type="text" name="senha">
+    <button type="submit">cadastrar</button>
+</form>
+
+
+<form action="{% url 'cadastrar_data' %}" method="post">{% csrf_token %}
+    <h1>data</h1>
+    <input type="number" name="data" placeholder="Data">
+    <button type="submit">cadastrar</button>
+</form>
+

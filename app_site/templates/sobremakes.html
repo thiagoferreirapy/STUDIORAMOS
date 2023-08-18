@@ -1,0 +1,104 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'app_site/css/sobremakes2.css' %}">
+    <script src="https://kit.fontawesome.com/dc37c7fe1c.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <title>{{make.nome.title}} - STUDIO RAMOSS</title>
+</head>
+<body onload="load()"> 
+    <section class="loading" id="loading_content">
+        <div class="container_loader"></div>
+    </section> 
+    {% include 'nav.html'%}
+
+    <main onmouseover="menos()"  id="container" >
+        <section class="container_galeria_fotos">
+
+            <div class="galeria_fotos" >
+                <div class="titulo_foto">
+                    <h1>{{make.nome.title}}</h1>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Veja mais!
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="{% url 'sobremakes' 1%}">Maquiagem Natural</a></li>
+                          <li><a class="dropdown-item" href="{% url 'sobremakes' 2%}">Maquiagem Colorida</a></li>
+                          <li><a class="dropdown-item" href="{% url 'sobremakes' 3%}">Maquiagem para Festas</a></li>
+                          <li><a class="dropdown-item" href="{% url 'sobremakes' 4%}">Maquiagem Glan</a></li>
+                          <li><a class="dropdown-item" href="{% url 'sobremakes' 5%}">Maquiagem Artistica</a></li>
+                          <li><a class="dropdown-item" href="{% url 'sobremakes' 6%}">Maquiagem para Casamento</a></li>
+                          <li><a class="dropdown-item" href="{% url 'sobremakes' 7%}">Maquiagem para Eventos Sociais</a></li>
+                        </ul>
+                      </div>
+                </div>
+                <div class="galeria" >
+                    {%for img in foto %}
+                    
+                        <img src="{{img.img.url}}" alt="imagem" data-anime="top">
+                    
+                    {%endfor%}
+                </div>
+            </div>
+        </section>
+
+    </main>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+
+<script>
+    function load(){
+        loading = document.getElementById('loading_content');
+        container = document.getElementById('container');
+
+        setTimeout(()=>{
+            container.style.display = 'flex';
+            loading.style.display = 'none';
+        },5000)
+    }
+
+    const debounce = function(func, wait, immediate) {
+    let timeout;
+    return function(...args) {
+        const context = this;
+        const later = function () {
+        timeout = null;
+        if (!immediate) func.apply(context, args);
+        };
+        const callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+    };
+    };
+
+    const target = document.querySelectorAll('[data-anime]');
+    const animationClass = 'animate';
+
+    function animeScroll() {
+    const windowTop = window.pageYOffset + ((window.innerHeight * 3) / 4);
+    target.forEach(function(element) {
+        if((windowTop) > element.offsetTop) {
+        element.classList.add(animationClass);
+        } else {
+            element.classList.remove(animationClass);
+        }
+    })
+    }
+
+    animeScroll();
+
+    if(target.length) {
+    window.addEventListener('scroll', debounce(function() {
+        animeScroll();
+    }, 200));
+    }
+</script>
+
+</html>
